@@ -11,12 +11,7 @@
 #include "math.h"
 #include "my_config.h"
 
-#define HCSR04_START(x) do{\
-                            if(x==0)\
-                          /*关闭中断*/       EXTI->IMR &= ~(EXTI_Line1);\
-                            else\
-                         /*开启中断*/       EXTI->IMR |= EXTI_Line1;\
-                        }while(0);
+#define HCSR04_START(x) (x==0)?(EXTI->IMR &= ~EXTI_Line1):(EXTI->IMR |= EXTI_Line1);
 
 #define TRIG(void)  HCSR04_Trigger(void)
 

@@ -1,4 +1,5 @@
 #include "gpio.h"
+
 extern volatile uint16_t mscount;
 volatile uint8_t ReadyFlag = 0;
 
@@ -12,9 +13,9 @@ void My_GPIO_Init(void) {
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_Init(GPIOA, &GPIO_InitStructure);
     // 输入
-//    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
-//    GPIO_InitStructure.GPIO_Pin = ECHO_PIN;
-//    GPIO_Init(GPIOA, &GPIO_InitStructure);
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
+    GPIO_InitStructure.GPIO_Pin = ECHO_PIN;
+    GPIO_Init(GPIOA, &GPIO_InitStructure);
     GPIO_SetBits(GPIOA, MR_PIN);
 
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
@@ -26,7 +27,7 @@ void My_GPIO_Init(void) {
     EXTI_InitStruct.EXTI_Trigger = EXTI_Trigger_Rising_Falling;
     //指定EXTI线的触发信号激活边缘，上升沿/下降沿/双边沿（注，库函数中，后面的应该是EXTITrigger_TypeDef）
     EXTI_Init(&EXTI_InitStruct);
-
+    EXTI_ClearITPendingBit(EXTI_Line1);
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
     NVIC_InitTypeDef NVIC_InitStruct;
     NVIC_InitStruct.NVIC_IRQChannel = EXTI1_IRQn;//指定要启用或禁用的IRQ通道
@@ -38,9 +39,9 @@ void My_GPIO_Init(void) {
 
 void EXTI1_IRQHandler(void)//中断函数的格式
 {
-    if (EXTI_GetITStatus(EXTI_Line1))//判断是否为EXTI14进来，返回值为 SET or RESET
+    if (EXTI_GetITStatus(EXTI_Line1) == SET)//判断是否为EXTI14进来，返回值为 SET or RESET
     {
-        if (GPIO_ReadInputDataBit(GPIOA, ECHO_PIN)) {
+        if (GPIO_ReadInputDataBit(GPIOA, ECHO_PIN) == SET) {
             mscount = 0;
             TIM_Cmd(TIM3, ENABLE);
         } else {

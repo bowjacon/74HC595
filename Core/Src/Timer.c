@@ -3,10 +3,11 @@
 
 volatile uint8_t GetFlag;
 extern volatile uint16_t mscount;
-volatile uint16_t  Interval= Long_Distance_Interval;
+volatile uint16_t Interval;
 void Timer_Init(void) {
-    TIM3_Init(999, 71, 2, 2, DISABLE);
-    TIM2_Init(999, 71, 2, 3, ENABLE);
+    TIM3_Init(999, 71, 3, 1, DISABLE);
+    TIM2_Init(999, 71, 3, 2, ENABLE);
+    Interval = Short_Distance_Interval;
 }
 
 void Set_Timer(TIM_TypeDef *TIMx, uint16_t period, uint16_t prescaler,
