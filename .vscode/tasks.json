@@ -1,0 +1,50 @@
+{
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "configure cmake",
+      "command": "cmake",
+      "args": [
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=1",
+        "-G",
+        "MinGW Makefiles",
+        "-B",
+        "${workspaceFolder}/build"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "OpenOCD",
+      "type": "shell",
+      "command": "openocd",
+      "args": [
+        "-f",
+        "./CMSIS_DAP.cfg",
+        "-c",
+        "gdb_port disabled",
+        "-c",
+        "tcl_port disabled",
+        "-c",
+        "program ./build/Example.elf",
+        "-c",
+        "reset",
+        "-c",
+        "shutdown"
+      ],
+      //先运行configure cmake
+    //   "dependsOn": "configure cmake",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ],
+  "version": "2.0.0",
+
+  "presentation": {
+    "panel": "shared"
+  }
+}

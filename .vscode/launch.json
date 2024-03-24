@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    // "tasks": [
+    //     {
+    //         "label": "openocd make",
+    //         "type": "shell",
+    //         "command": "openocd",
+    //         "args": [
+    //             "-f", "./CMSIS_DAP.cfg",
+    //             "-c", "gdb_port disabled",
+    //             "-c", "tcl_port disabled",
+    //             "-c", "program ./build/Example.elf",
+    //             "-c", "reset",
+    //             "-c", "shutdown"
+    //         ],
+    //         "problemMatcher": []
+    //     }
+    // ],
+    "configurations": [
+    {
+        "cwd": "${workspaceFolder}",
+        "executable": "${workspaceFolder}/build/Example.elf",
+        "name": "Debug with OpenOCD",
+        "request": "launch",
+        "type": "cortex-debug",
+        "servertype": "openocd",
+        "configFiles": ["CMSIS_DAP.cfg"],
+        "svdFile": "stm32f103.svd",
+        "searchDir": [],
+        "runToEntryPoint": "main",
+        "showDevDebugOutput": "none"
+    }
+    ]
+}
