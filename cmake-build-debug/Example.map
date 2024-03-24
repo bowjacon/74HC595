@@ -2440,21 +2440,21 @@ LOAD f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/no
  .debug_rnglists
                 0x00000661       0x2b CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
 
-.debug_line     0x00000000     0x55f5
+.debug_line     0x00000000     0x55f3
  .debug_line    0x00000000      0x296 CMakeFiles/Example.elf.dir/Core/Src/74hc595.c.obj
- .debug_line    0x00000296      0x5bd CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
- .debug_line    0x00000853      0x26a CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
- .debug_line    0x00000abd      0x48b CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
- .debug_line    0x00000f48      0x290 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
- .debug_line    0x000011d8      0x1b1 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
- .debug_line    0x00001389      0x196 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
- .debug_line    0x0000151f      0x156 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
- .debug_line    0x00001675       0x78 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
- .debug_line    0x000016ed      0x29b CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
- .debug_line    0x00001988      0xf7d CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
- .debug_line    0x00002905      0x92b CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
- .debug_line    0x00003230     0x2026 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
- .debug_line    0x00005256      0x39f CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
+ .debug_line    0x00000296      0x5bb CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+ .debug_line    0x00000851      0x26a CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
+ .debug_line    0x00000abb      0x48b CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+ .debug_line    0x00000f46      0x290 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
+ .debug_line    0x000011d6      0x1b1 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+ .debug_line    0x00001387      0x196 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
+ .debug_line    0x0000151d      0x156 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+ .debug_line    0x00001673       0x78 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
+ .debug_line    0x000016eb      0x29b CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
+ .debug_line    0x00001986      0xf7d CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+ .debug_line    0x00002903      0x92b CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
+ .debug_line    0x0000322e     0x2026 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+ .debug_line    0x00005254      0x39f CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
 
 .debug_str      0x00000000     0x20da
  .debug_str     0x00000000      0x231 CMakeFiles/Example.elf.dir/Core/Src/74hc595.c.obj
