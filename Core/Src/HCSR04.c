@@ -4,11 +4,9 @@ extern uint8_t ReadyFlag;
 volatile uint16_t mscount;
 extern volatile uint8_t GetFlag;
 extern volatile uint16_t Interval;
-volatile uint8_t RunFlag;
 uint8_t Sendflag;
 
 void HCSR04_Init(void) {
-//    HCSR04_START(0)
     RunFlag = 0;
     Sendflag = 1;
 }
@@ -34,7 +32,6 @@ void Value_Processing(uint8_t *dist) {
     static float Test_sum;
     static uint16_t Step;
     float value;
-//    static uint8_t Sendflag ;
     if (GetFlag) {
         if (Sendflag) {//发送触发信号,开启外部中断
             TRIG();
