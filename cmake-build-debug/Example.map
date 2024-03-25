@@ -106,6 +106,8 @@ Discarded input sections
  .bss           0x00000000        0x0 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
  .text.HCSR04_Trigger
                 0x00000000       0x24 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+ .text.HCSR04_GetValue
+                0x00000000       0x48 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
  .text.ValueToNixie
                 0x00000000       0x78 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
  .text          0x00000000        0x0 CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
@@ -576,8 +578,6 @@ Discarded input sections
  .bss           0x00000000        0x0 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
  .text.EXTI_DeInit
                 0x00000000       0x1c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
- .text.EXTI_Init
-                0x00000000       0x70 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
  .text.EXTI_StructInit
                 0x00000000       0x10 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
  .text.EXTI_GenerateSWInterrupt
@@ -586,24 +586,6 @@ Discarded input sections
                 0x00000000       0x14 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
  .text.EXTI_ClearFlag
                 0x00000000        0xc CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
- .text.EXTI_GetITStatus
-                0x00000000       0x1c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
- .text.EXTI_ClearITPendingBit
-                0x00000000        0xc CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
- .debug_info    0x00000000      0x33b CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
- .debug_abbrev  0x00000000      0x1e3 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
- .debug_loclists
-                0x00000000      0x14d CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
- .debug_aranges
-                0x00000000       0x58 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
- .debug_rnglists
-                0x00000000       0x3d CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
- .debug_line    0x00000000      0x34c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
- .debug_str     0x00000000      0x3b2 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
- .comment       0x00000000       0x46 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
- .debug_frame   0x00000000       0xac CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
- .ARM.attributes
-                0x00000000       0x29 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
  .text          0x00000000        0x0 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_flash.c.obj
  .data          0x00000000        0x0 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_flash.c.obj
  .bss           0x00000000        0x0 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_flash.c.obj
@@ -757,8 +739,6 @@ Discarded input sections
                 0x00000000        0xc CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
  .text.GPIO_PinRemapConfig
                 0x00000000       0x70 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
- .text.GPIO_EXTILineConfig
-                0x00000000       0x2c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
  .text.GPIO_ETH_MediaInterfaceConfig
                 0x00000000        0xc CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
  .text          0x00000000        0x0 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_i2c.c.obj
@@ -1782,7 +1762,7 @@ LOAD f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/no
                 0x08000000                g_pfnVectors
                 0x0800010c                        . = ALIGN (0x4)
 
-.text           0x08000110     0x201c
+.text           0x08000110     0x21ac
                 0x08000110                        . = ALIGN (0x4)
  *(.text)
  .text          0x08000110      0x378 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
@@ -1884,278 +1864,295 @@ LOAD f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/no
  .text.SendByte
                 0x08001148       0x58 CMakeFiles/Example.elf.dir/Core/Src/74hc595.c.obj
                 0x08001148                SendByte
- .text.HCSR04_GetValue
-                0x080011a0       0x94 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
-                0x080011a0                HCSR04_GetValue
+ .text.HCSR04_Init
+                0x080011a0       0x1c CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+                0x080011a0                HCSR04_Init
  .text.Data_Processing
-                0x08001234      0x190 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
-                0x08001234                Data_Processing
+                0x080011bc      0x190 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+                0x080011bc                Data_Processing
+ *fill*         0x0800134c        0x4 
  .text.Value_Processing
-                0x080013c4      0x108 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
-                0x080013c4                Value_Processing
+                0x08001350      0x1b8 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+                0x08001350                Value_Processing
  .text.DisplayNixie
-                0x080014cc       0x7c CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
-                0x080014cc                DisplayNixie
+                0x08001508       0x7c CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
+                0x08001508                DisplayNixie
  .text.Timer_Init
-                0x08001548       0xc0 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
-                0x08001548                Timer_Init
+                0x08001584       0xc0 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+                0x08001584                Timer_Init
  .text.TIM3_IRQHandler
-                0x08001608       0x2c CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
-                0x08001608                TIM3_IRQHandler
+                0x08001644       0x2c CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+                0x08001644                TIM3_IRQHandler
  .text.TIM2_IRQHandler
-                0x08001634       0x48 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
-                0x08001634                TIM2_IRQHandler
+                0x08001670       0x48 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+                0x08001670                TIM2_IRQHandler
  .text.Delay_us
-                0x0800167c       0x20 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
-                0x0800167c                Delay_us
+                0x080016b8       0x20 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
+                0x080016b8                Delay_us
  .text.My_GPIO_Init
-                0x0800169c       0x44 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
-                0x0800169c                My_GPIO_Init
+                0x080016d8       0x6c CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+                0x080016d8                My_GPIO_Init
+ .text.EXTI1_IRQHandler
+                0x08001744       0x58 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+                0x08001744                EXTI1_IRQHandler
  .text.startup.main
-                0x080016e0       0x20 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
-                0x080016e0                main
+                0x0800179c       0x30 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
+                0x0800179c                main
  .text.NMI_Handler
-                0x08001700        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
-                0x08001700                NMI_Handler
+                0x080017cc        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+                0x080017cc                NMI_Handler
  .text.HardFault_Handler
-                0x08001704        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
-                0x08001704                HardFault_Handler
+                0x080017d0        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+                0x080017d0                HardFault_Handler
  .text.MemManage_Handler
-                0x08001708        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
-                0x08001708                MemManage_Handler
+                0x080017d4        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+                0x080017d4                MemManage_Handler
  .text.BusFault_Handler
-                0x0800170c        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
-                0x0800170c                BusFault_Handler
+                0x080017d8        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+                0x080017d8                BusFault_Handler
  .text.UsageFault_Handler
-                0x08001710        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
-                0x08001710                UsageFault_Handler
+                0x080017dc        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+                0x080017dc                UsageFault_Handler
  .text.SVC_Handler
-                0x08001714        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
-                0x08001714                SVC_Handler
+                0x080017e0        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+                0x080017e0                SVC_Handler
  .text.DebugMon_Handler
-                0x08001718        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
-                0x08001718                DebugMon_Handler
+                0x080017e4        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+                0x080017e4                DebugMon_Handler
  .text.PendSV_Handler
-                0x0800171c        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
-                0x0800171c                PendSV_Handler
+                0x080017e8        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+                0x080017e8                PendSV_Handler
  .text.SysTick_Handler
-                0x08001720        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
-                0x08001720                SysTick_Handler
+                0x080017ec        0x4 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+                0x080017ec                SysTick_Handler
  .text.Reset_Handler
-                0x08001724       0x48 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
-                0x08001724                Reset_Handler
+                0x080017f0       0x48 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
+                0x080017f0                Reset_Handler
  .text.Default_Handler
-                0x0800176c        0x2 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
-                0x0800176c                RTC_Alarm_IRQHandler
-                0x0800176c                EXTI2_IRQHandler
-                0x0800176c                TIM1_CC_IRQHandler
-                0x0800176c                PVD_IRQHandler
-                0x0800176c                EXTI3_IRQHandler
-                0x0800176c                EXTI0_IRQHandler
-                0x0800176c                I2C2_EV_IRQHandler
-                0x0800176c                ADC1_2_IRQHandler
-                0x0800176c                SPI1_IRQHandler
-                0x0800176c                TAMPER_IRQHandler
-                0x0800176c                DMA1_Channel4_IRQHandler
-                0x0800176c                USART3_IRQHandler
-                0x0800176c                RTC_IRQHandler
-                0x0800176c                DMA1_Channel7_IRQHandler
-                0x0800176c                CAN1_RX1_IRQHandler
-                0x0800176c                TIM4_IRQHandler
-                0x0800176c                I2C1_EV_IRQHandler
-                0x0800176c                DMA1_Channel6_IRQHandler
-                0x0800176c                RCC_IRQHandler
-                0x0800176c                TIM1_TRG_COM_IRQHandler
-                0x0800176c                DMA1_Channel1_IRQHandler
-                0x0800176c                Default_Handler
-                0x0800176c                EXTI15_10_IRQHandler
-                0x0800176c                EXTI9_5_IRQHandler
-                0x0800176c                SPI2_IRQHandler
-                0x0800176c                DMA1_Channel5_IRQHandler
-                0x0800176c                EXTI4_IRQHandler
-                0x0800176c                USB_LP_CAN1_RX0_IRQHandler
-                0x0800176c                USB_HP_CAN1_TX_IRQHandler
-                0x0800176c                DMA1_Channel3_IRQHandler
-                0x0800176c                TIM1_UP_IRQHandler
-                0x0800176c                WWDG_IRQHandler
-                0x0800176c                TIM1_BRK_IRQHandler
-                0x0800176c                EXTI1_IRQHandler
-                0x0800176c                USART2_IRQHandler
-                0x0800176c                I2C2_ER_IRQHandler
-                0x0800176c                DMA1_Channel2_IRQHandler
-                0x0800176c                CAN1_SCE_IRQHandler
-                0x0800176c                FLASH_IRQHandler
-                0x0800176c                USART1_IRQHandler
-                0x0800176c                I2C1_ER_IRQHandler
-                0x0800176c                USBWakeUp_IRQHandler
- *fill*         0x0800176e        0x2 
+                0x08001838        0x2 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
+                0x08001838                RTC_Alarm_IRQHandler
+                0x08001838                EXTI2_IRQHandler
+                0x08001838                TIM1_CC_IRQHandler
+                0x08001838                PVD_IRQHandler
+                0x08001838                EXTI3_IRQHandler
+                0x08001838                EXTI0_IRQHandler
+                0x08001838                I2C2_EV_IRQHandler
+                0x08001838                ADC1_2_IRQHandler
+                0x08001838                SPI1_IRQHandler
+                0x08001838                TAMPER_IRQHandler
+                0x08001838                DMA1_Channel4_IRQHandler
+                0x08001838                USART3_IRQHandler
+                0x08001838                RTC_IRQHandler
+                0x08001838                DMA1_Channel7_IRQHandler
+                0x08001838                CAN1_RX1_IRQHandler
+                0x08001838                TIM4_IRQHandler
+                0x08001838                I2C1_EV_IRQHandler
+                0x08001838                DMA1_Channel6_IRQHandler
+                0x08001838                RCC_IRQHandler
+                0x08001838                TIM1_TRG_COM_IRQHandler
+                0x08001838                DMA1_Channel1_IRQHandler
+                0x08001838                Default_Handler
+                0x08001838                EXTI15_10_IRQHandler
+                0x08001838                EXTI9_5_IRQHandler
+                0x08001838                SPI2_IRQHandler
+                0x08001838                DMA1_Channel5_IRQHandler
+                0x08001838                EXTI4_IRQHandler
+                0x08001838                USB_LP_CAN1_RX0_IRQHandler
+                0x08001838                USB_HP_CAN1_TX_IRQHandler
+                0x08001838                DMA1_Channel3_IRQHandler
+                0x08001838                TIM1_UP_IRQHandler
+                0x08001838                WWDG_IRQHandler
+                0x08001838                TIM1_BRK_IRQHandler
+                0x08001838                USART2_IRQHandler
+                0x08001838                I2C2_ER_IRQHandler
+                0x08001838                DMA1_Channel2_IRQHandler
+                0x08001838                CAN1_SCE_IRQHandler
+                0x08001838                FLASH_IRQHandler
+                0x08001838                USART1_IRQHandler
+                0x08001838                I2C1_ER_IRQHandler
+                0x08001838                USBWakeUp_IRQHandler
+ *fill*         0x0800183a        0x2 
  .text.NVIC_PriorityGroupConfig
-                0x08001770       0x14 CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
-                0x08001770                NVIC_PriorityGroupConfig
+                0x0800183c       0x14 CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
+                0x0800183c                NVIC_PriorityGroupConfig
  .text.NVIC_Init
-                0x08001784       0x5c CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
-                0x08001784                NVIC_Init
+                0x08001850       0x5c CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
+                0x08001850                NVIC_Init
+ .text.EXTI_Init
+                0x080018ac       0x70 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
+                0x080018ac                EXTI_Init
+ .text.EXTI_GetITStatus
+                0x0800191c       0x1c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
+                0x0800191c                EXTI_GetITStatus
+ .text.EXTI_ClearITPendingBit
+                0x08001938        0xc CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
+                0x08001938                EXTI_ClearITPendingBit
  .text.GPIO_Init
-                0x080017e0      0x34c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
-                0x080017e0                GPIO_Init
+                0x08001944      0x34c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+                0x08001944                GPIO_Init
  .text.GPIO_ReadInputDataBit
-                0x08001b2c        0xc CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
-                0x08001b2c                GPIO_ReadInputDataBit
+                0x08001c90        0xc CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+                0x08001c90                GPIO_ReadInputDataBit
  .text.GPIO_SetBits
-                0x08001b38        0x4 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
-                0x08001b38                GPIO_SetBits
+                0x08001c9c        0x4 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+                0x08001c9c                GPIO_SetBits
  .text.GPIO_ResetBits
-                0x08001b3c        0x4 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
-                0x08001b3c                GPIO_ResetBits
+                0x08001ca0        0x4 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+                0x08001ca0                GPIO_ResetBits
  .text.GPIO_WriteBit
-                0x08001b40        0xc CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
-                0x08001b40                GPIO_WriteBit
+                0x08001ca4        0xc CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+                0x08001ca4                GPIO_WriteBit
+ .text.GPIO_EXTILineConfig
+                0x08001cb0       0x2c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+                0x08001cb0                GPIO_EXTILineConfig
  .text.RCC_APB2PeriphClockCmd
-                0x08001b4c       0x18 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
-                0x08001b4c                RCC_APB2PeriphClockCmd
+                0x08001cdc       0x18 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
+                0x08001cdc                RCC_APB2PeriphClockCmd
  .text.RCC_APB1PeriphClockCmd
-                0x08001b64       0x18 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
-                0x08001b64                RCC_APB1PeriphClockCmd
+                0x08001cf4       0x18 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
+                0x08001cf4                RCC_APB1PeriphClockCmd
  .text.TIM_TimeBaseInit
-                0x08001b7c       0xd0 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
-                0x08001b7c                TIM_TimeBaseInit
- .text.TIM_Cmd  0x08001c4c       0x1c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
-                0x08001c4c                TIM_Cmd
+                0x08001d0c       0xd0 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+                0x08001d0c                TIM_TimeBaseInit
+ .text.TIM_Cmd  0x08001ddc       0x1c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+                0x08001ddc                TIM_Cmd
  .text.TIM_ITConfig
-                0x08001c68       0x14 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
-                0x08001c68                TIM_ITConfig
+                0x08001df8       0x14 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+                0x08001df8                TIM_ITConfig
  .text.TIM_InternalClockConfig
-                0x08001c7c       0x10 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
-                0x08001c7c                TIM_InternalClockConfig
+                0x08001e0c       0x10 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+                0x08001e0c                TIM_InternalClockConfig
  .text.TIM_GetCounter
-                0x08001c8c        0x8 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
-                0x08001c8c                TIM_GetCounter
+                0x08001e1c        0x8 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+                0x08001e1c                TIM_GetCounter
  .text.TIM_ClearFlag
-                0x08001c94        0x8 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
-                0x08001c94                TIM_ClearFlag
+                0x08001e24        0x8 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+                0x08001e24                TIM_ClearFlag
  .text.TIM_GetITStatus
-                0x08001c9c       0x18 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
-                0x08001c9c                TIM_GetITStatus
+                0x08001e2c       0x18 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+                0x08001e2c                TIM_GetITStatus
  .text.TIM_ClearITPendingBit
-                0x08001cb4        0x8 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
-                0x08001cb4                TIM_ClearITPendingBit
+                0x08001e44        0x8 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+                0x08001e44                TIM_ClearITPendingBit
  .text.SystemInit
-                0x08001cbc      0x100 CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
-                0x08001cbc                SystemInit
+                0x08001e4c      0x100 CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
+                0x08001e4c                SystemInit
  .text.__libc_init_array
-                0x08001dbc       0x50 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-init.o)
-                0x08001dbc                __libc_init_array
+                0x08001f4c       0x50 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-init.o)
+                0x08001f4c                __libc_init_array
  .text.__retarget_lock_acquire_recursive
-                0x08001e0c        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-lock.o)
-                0x08001e0c                __retarget_lock_acquire_recursive
+                0x08001f9c        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-lock.o)
+                0x08001f9c                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x08001e10        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-lock.o)
-                0x08001e10                __retarget_lock_release_recursive
+                0x08001fa0        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-lock.o)
+                0x08001fa0                __retarget_lock_release_recursive
  .text.startup.register_fini
-                0x08001e14       0x14 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__call_atexit.o)
- .text.atexit   0x08001e28        0xc f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-atexit.o)
-                0x08001e28                atexit
+                0x08001fa4       0x14 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__call_atexit.o)
+ .text.atexit   0x08001fb8        0xc f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-atexit.o)
+                0x08001fb8                atexit
  .text.__libc_fini_array
-                0x08001e34       0x28 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-fini.o)
-                0x08001e34                __libc_fini_array
+                0x08001fc4       0x28 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-fini.o)
+                0x08001fc4                __libc_fini_array
  .text.__register_exitproc
-                0x08001e5c       0x80 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__atexit.o)
-                0x08001e5c                __register_exitproc
- .text.__errno  0x08001edc        0xc f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-errno.o)
-                0x08001edc                __errno
- .text.sqrt     0x08001ee8       0x50 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libm.a(libm_a-w_sqrt.o)
-                0x08001ee8                sqrt
+                0x08001fec       0x80 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__atexit.o)
+                0x08001fec                __register_exitproc
+ .text.__errno  0x0800206c        0xc f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-errno.o)
+                0x0800206c                __errno
+ .text.sqrt     0x08002078       0x50 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libm.a(libm_a-w_sqrt.o)
+                0x08002078                sqrt
  .text.__ieee754_sqrt
-                0x08001f38      0x1dc f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libm.a(libm_a-e_sqrt.o)
-                0x08001f38                __ieee754_sqrt
+                0x080020c8      0x1dc f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libm.a(libm_a-e_sqrt.o)
+                0x080020c8                __ieee754_sqrt
  *(.glue_7)
- .glue_7        0x08002114        0x0 linker stubs
+ .glue_7        0x080022a4        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08002114        0x0 linker stubs
+ .glue_7t       0x080022a4        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x08002114        0x0 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x080022a4        0x0 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtbegin.o
  *(.init)
- .init          0x08002114        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crti.o
-                0x08002114                _init
- .init          0x08002118        0x8 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtn.o
+ .init          0x080022a4        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crti.o
+                0x080022a4                _init
+ .init          0x080022a8        0x8 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x08002120        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crti.o
-                0x08002120                _fini
- .fini          0x08002124        0x8 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtn.o
-                0x0800212c                        . = ALIGN (0x4)
-                0x0800212c                        _etext = .
+ .fini          0x080022b0        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crti.o
+                0x080022b0                _fini
+ .fini          0x080022b4        0x8 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtn.o
+                0x080022bc                        . = ALIGN (0x4)
+                0x080022bc                        _etext = .
 
-.vfp11_veneer   0x0800212c        0x0
- .vfp11_veneer  0x0800212c        0x0 linker stubs
+.vfp11_veneer   0x080022bc        0x0
+ .vfp11_veneer  0x080022bc        0x0 linker stubs
 
-.v4_bx          0x0800212c        0x0
- .v4_bx         0x0800212c        0x0 linker stubs
+.v4_bx          0x080022bc        0x0
+ .v4_bx         0x080022bc        0x0 linker stubs
 
-.iplt           0x0800212c        0x0
- .iplt          0x0800212c        0x0 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x080022bc        0x0
+ .iplt          0x080022bc        0x0 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtbegin.o
 
-.rodata         0x0800212c       0x20
-                0x0800212c                        . = ALIGN (0x4)
+.rodata         0x080022bc       0x20
+                0x080022bc                        . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
  .rodata.Cathode_List
-                0x0800212c       0x10 CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
+                0x080022bc       0x10 CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
  .rodata.Anode_List
-                0x0800213c       0x10 CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
-                0x0800214c                        . = ALIGN (0x4)
+                0x080022cc       0x10 CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
+                0x080022dc                        . = ALIGN (0x4)
 
-.rel.dyn        0x0800214c        0x0
- .rel.iplt      0x0800214c        0x0 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x080022dc        0x0
+ .rel.iplt      0x080022dc        0x0 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtbegin.o
 
-.ARM.extab      0x0800214c        0x0
-                0x0800214c                        . = ALIGN (0x4)
+.ARM.extab      0x080022dc        0x0
+                0x080022dc                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0800214c                        . = ALIGN (0x4)
+                0x080022dc                        . = ALIGN (0x4)
 
-.ARM            0x0800214c        0x0
-                0x0800214c                        . = ALIGN (0x4)
-                0x0800214c                        __exidx_start = .
+.ARM            0x080022dc        0x0
+                0x080022dc                        . = ALIGN (0x4)
+                0x080022dc                        __exidx_start = .
  *(.ARM.exidx*)
-                0x0800214c                        __exidx_end = .
-                0x0800214c                        . = ALIGN (0x4)
+                0x080022dc                        __exidx_end = .
+                0x080022dc                        . = ALIGN (0x4)
 
-.preinit_array  0x0800214c        0x0
-                0x0800214c                        . = ALIGN (0x4)
-                0x0800214c                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x080022dc        0x0
+                0x080022dc                        . = ALIGN (0x4)
+                0x080022dc                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0800214c                        PROVIDE (__preinit_array_end = .)
-                0x0800214c                        . = ALIGN (0x4)
+                0x080022dc                        PROVIDE (__preinit_array_end = .)
+                0x080022dc                        . = ALIGN (0x4)
 
-.init_array     0x0800214c        0x8
-                0x0800214c                        . = ALIGN (0x4)
-                0x0800214c                        PROVIDE (__init_array_start = .)
+.init_array     0x080022dc        0x8
+                0x080022dc                        . = ALIGN (0x4)
+                0x080022dc                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00000
-                0x0800214c        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__call_atexit.o)
+                0x080022dc        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__call_atexit.o)
  *(.init_array*)
- .init_array    0x08002150        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtbegin.o
-                0x08002154                        PROVIDE (__init_array_end = .)
-                0x08002154                        . = ALIGN (0x4)
+ .init_array    0x080022e0        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtbegin.o
+                0x080022e4                        PROVIDE (__init_array_end = .)
+                0x080022e4                        . = ALIGN (0x4)
 
-.fini_array     0x08002154        0x4
-                0x08002154                        . = ALIGN (0x4)
-                0x08002154                        PROVIDE (__fini_array_start = .)
+.fini_array     0x080022e4        0x4
+                0x080022e4                        . = ALIGN (0x4)
+                0x080022e4                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08002154        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtbegin.o
-                0x08002158                        PROVIDE (__fini_array_end = .)
-                0x08002158                        . = ALIGN (0x4)
-                0x08002158                        _sidata = LOADADDR (.data)
+ .fini_array    0x080022e4        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtbegin.o
+                0x080022e8                        PROVIDE (__fini_array_end = .)
+                0x080022e8                        . = ALIGN (0x4)
+                0x080022e8                        _sidata = LOADADDR (.data)
 
-.data           0x20000000      0x140 load address 0x08002158
+.data           0x20000000      0x140 load address 0x080022e8
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
  *(.data*)
+ .data.Sendflag.6
+                0x20000000        0x1 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+ *fill*         0x20000001        0x1 
  .data.Interval
-                0x20000000        0x2 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
-                0x20000000                Interval
- *fill*         0x20000002        0x2 
+                0x20000002        0x2 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+                0x20000002                Interval
  .data._impure_ptr
                 0x20000004        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-impure.o)
                 0x20000004                _impure_ptr
@@ -2172,17 +2169,17 @@ LOAD f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/no
                 0x20000140                        _edata = .
 
 .tm_clone_table
-                0x20000140        0x0 load address 0x08002298
+                0x20000140        0x0 load address 0x08002428
  .tm_clone_table
                 0x20000140        0x0 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtbegin.o
  .tm_clone_table
                 0x20000140        0x0 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtend.o
 
-.igot.plt       0x20000140        0x0 load address 0x08002298
+.igot.plt       0x20000140        0x0 load address 0x08002428
  .igot.plt      0x20000140        0x0 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtbegin.o
                 0x20000140                        . = ALIGN (0x4)
 
-.bss            0x20000140      0x494 load address 0x08002298
+.bss            0x20000140      0x498 load address 0x08002428
                 0x20000140                        _sbss = .
                 0x20000140                        __bss_start__ = _sbss
  *(.bss)
@@ -2198,34 +2195,39 @@ LOAD f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/no
  .bss.Sum.3     0x20000168        0x4 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
  .bss.Data.4    0x2000016c      0x190 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
  .bss.Step.5    0x200002fc        0x2 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
- .bss.mscount   0x200002fe        0x2 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
-                0x200002fe                mscount
- .bss.count.0   0x20000300        0x2 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
- .bss.GetFlag   0x20000302        0x1 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
-                0x20000302                GetFlag
- *fill*         0x20000303        0x1 
- .bss.__sf      0x20000304      0x138 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-findfp.o)
-                0x20000304                __sf
+ .bss.RunFlag   0x200002fe        0x1 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+                0x200002fe                RunFlag
+ *fill*         0x200002ff        0x1 
+ .bss.mscount   0x20000300        0x2 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+                0x20000300                mscount
+ .bss.count.0   0x20000302        0x2 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+ .bss.GetFlag   0x20000304        0x1 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+                0x20000304                GetFlag
+ .bss.ReadyFlag
+                0x20000305        0x1 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+                0x20000305                ReadyFlag
+ *fill*         0x20000306        0x2 
+ .bss.__sf      0x20000308      0x138 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-findfp.o)
+                0x20000308                __sf
  .bss.__lock___atexit_recursive_mutex
-                0x2000043c        0x1 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-lock.o)
-                0x2000043c                __lock___atexit_recursive_mutex
- *fill*         0x2000043d        0x3 
- .bss.__atexit  0x20000440        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__call_atexit.o)
-                0x20000440                __atexit
+                0x20000440        0x1 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-lock.o)
+                0x20000440                __lock___atexit_recursive_mutex
+ *fill*         0x20000441        0x3 
+ .bss.__atexit  0x20000444        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__call_atexit.o)
+                0x20000444                __atexit
  .bss.__atexit0
-                0x20000444      0x190 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__atexit.o)
-                0x20000444                __atexit0
+                0x20000448      0x190 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__atexit.o)
+                0x20000448                __atexit0
  https://stackoverflow.com/questions/16835716/bss-vs-common-what-goes-where()
  */()
  *(COMMON)
-                0x200005d4                        . = ALIGN (0x4)
-                0x200005d4                        _ebss = .
-                0x200005d4                        __bss_end__ = _ebss
+                0x200005d8                        . = ALIGN (0x4)
+                0x200005d8                        _ebss = .
+                0x200005d8                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x200005d4      0x604 load address 0x08002298
+                0x200005d8      0x600 load address 0x08002428
                 0x200005d8                        . = ALIGN (0x8)
- *fill*         0x200005d4        0x4 
                 [!provide]                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
                 0x200007d8                        . = (. + _Min_Heap_Size)
@@ -2267,223 +2269,236 @@ LOAD f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/no
  .ARM.attributes
                 0x000001b3       0x29 CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
  .ARM.attributes
-                0x000001dc       0x29 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+                0x000001dc       0x29 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
  .ARM.attributes
-                0x00000205       0x29 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
+                0x00000205       0x29 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
  .ARM.attributes
-                0x0000022e       0x29 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+                0x0000022e       0x29 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
  .ARM.attributes
-                0x00000257       0x29 CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
+                0x00000257       0x29 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
  .ARM.attributes
-                0x00000280       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+                0x00000280       0x29 CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
  .ARM.attributes
-                0x0000029d       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+                0x000002a9       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
  .ARM.attributes
-                0x000002ba       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+                0x000002c6       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
  .ARM.attributes
-                0x000002d7       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivsf3.o)
+                0x000002e3       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
  .ARM.attributes
-                0x000002f4       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+                0x00000300       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivsf3.o)
  .ARM.attributes
-                0x00000311       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
+                0x0000031d       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
  .ARM.attributes
-                0x0000032e       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-findfp.o)
+                0x0000033a       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
  .ARM.attributes
-                0x0000035b       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-impure.o)
+                0x00000357       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-findfp.o)
  .ARM.attributes
-                0x00000388       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-init.o)
+                0x00000384       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-impure.o)
  .ARM.attributes
-                0x000003b5       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-lock.o)
+                0x000003b1       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-init.o)
  .ARM.attributes
-                0x000003e2       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__call_atexit.o)
+                0x000003de       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-lock.o)
  .ARM.attributes
-                0x0000040f       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-atexit.o)
+                0x0000040b       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__call_atexit.o)
  .ARM.attributes
-                0x0000043c       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-fini.o)
+                0x00000438       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-atexit.o)
  .ARM.attributes
-                0x00000469       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__atexit.o)
+                0x00000465       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-fini.o)
  .ARM.attributes
-                0x00000496       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-errno.o)
+                0x00000492       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__atexit.o)
  .ARM.attributes
-                0x000004c3       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtend.o
+                0x000004bf       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-errno.o)
  .ARM.attributes
-                0x000004f0       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtn.o
+                0x000004ec       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtend.o
  .ARM.attributes
-                0x0000050d       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libm.a(libm_a-w_sqrt.o)
+                0x00000519       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtn.o
  .ARM.attributes
-                0x0000053a       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libm.a(libm_a-e_sqrt.o)
+                0x00000536       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libm.a(libm_a-w_sqrt.o)
  .ARM.attributes
-                0x00000567       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivdf3.o)
+                0x00000563       0x2d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libm.a(libm_a-e_sqrt.o)
  .ARM.attributes
-                0x00000584       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_cmpdf2.o)
+                0x00000590       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivdf3.o)
  .ARM.attributes
-                0x000005a1       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_unorddf2.o)
+                0x000005ad       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_cmpdf2.o)
+ .ARM.attributes
+                0x000005ca       0x1d f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_unorddf2.o)
 OUTPUT(Example.elf elf32-littlearm)
 LOAD linker stubs
 LOAD f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libc.a
 LOAD f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libm.a
 LOAD f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x00000000     0x6c0f
+.debug_info     0x00000000     0x760f
  .debug_info    0x00000000      0x3a8 CMakeFiles/Example.elf.dir/Core/Src/74hc595.c.obj
- .debug_info    0x000003a8      0xa9f CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
- .debug_info    0x00000e47      0x48f CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
- .debug_info    0x000012d6      0xf57 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
- .debug_info    0x0000222d      0x1bd CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
- .debug_info    0x000023ea      0x2b2 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
- .debug_info    0x0000269c      0x1a3 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
- .debug_info    0x0000283f       0xdd CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
- .debug_info    0x0000291c       0x30 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
- .debug_info    0x0000294c      0x4ee CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
- .debug_info    0x00002e3a      0x8be CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
- .debug_info    0x000036f8      0x94f CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
- .debug_info    0x00004047     0x2782 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
- .debug_info    0x000067c9      0x446 CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
+ .debug_info    0x000003a8      0xaee CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+ .debug_info    0x00000e96      0x48f CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
+ .debug_info    0x00001325      0xf57 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+ .debug_info    0x0000227c      0x1bd CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
+ .debug_info    0x00002439      0x907 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+ .debug_info    0x00002d40      0x1c4 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
+ .debug_info    0x00002f04       0xdd CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+ .debug_info    0x00002fe1       0x30 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
+ .debug_info    0x00003011      0x4ee CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
+ .debug_info    0x000034ff      0x33b CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
+ .debug_info    0x0000383a      0x8be CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+ .debug_info    0x000040f8      0x94f CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
+ .debug_info    0x00004a47     0x2782 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+ .debug_info    0x000071c9      0x446 CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
 
-.debug_abbrev   0x00000000     0x1879
+.debug_abbrev   0x00000000     0x1b5a
  .debug_abbrev  0x00000000      0x165 CMakeFiles/Example.elf.dir/Core/Src/74hc595.c.obj
- .debug_abbrev  0x00000165      0x2c6 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
- .debug_abbrev  0x0000042b      0x1c6 CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
- .debug_abbrev  0x000005f1      0x2b4 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
- .debug_abbrev  0x000008a5      0x133 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
- .debug_abbrev  0x000009d8      0x147 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
- .debug_abbrev  0x00000b1f       0xfa CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
- .debug_abbrev  0x00000c19       0x7a CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
- .debug_abbrev  0x00000c93       0x24 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
- .debug_abbrev  0x00000cb7      0x1a4 CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
- .debug_abbrev  0x00000e5b      0x261 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
- .debug_abbrev  0x000010bc      0x29e CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
- .debug_abbrev  0x0000135a      0x334 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
- .debug_abbrev  0x0000168e      0x1eb CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
+ .debug_abbrev  0x00000165      0x2de CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+ .debug_abbrev  0x00000443      0x1c6 CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
+ .debug_abbrev  0x00000609      0x2b4 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+ .debug_abbrev  0x000008bd      0x133 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
+ .debug_abbrev  0x000009f0      0x213 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+ .debug_abbrev  0x00000c03      0x114 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
+ .debug_abbrev  0x00000d17       0x7a CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+ .debug_abbrev  0x00000d91       0x24 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
+ .debug_abbrev  0x00000db5      0x1a4 CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
+ .debug_abbrev  0x00000f59      0x1e3 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
+ .debug_abbrev  0x0000113c      0x261 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+ .debug_abbrev  0x0000139d      0x29e CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
+ .debug_abbrev  0x0000163b      0x334 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+ .debug_abbrev  0x0000196f      0x1eb CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
 
 .debug_loclists
-                0x00000000     0x32be
+                0x00000000     0x344c
  .debug_loclists
                 0x00000000       0x33 CMakeFiles/Example.elf.dir/Core/Src/74hc595.c.obj
  .debug_loclists
-                0x00000033      0x2c1 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+                0x00000033      0x30e CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
  .debug_loclists
-                0x000002f4       0xaa CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
+                0x00000341       0xaa CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
  .debug_loclists
-                0x0000039e      0x2e0 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+                0x000003eb      0x2d4 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
  .debug_loclists
-                0x0000067e       0xbe CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
+                0x000006bf       0xbe CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
  .debug_loclists
-                0x0000073c       0xe1 CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
+                0x0000077d       0xe1 CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
  .debug_loclists
-                0x0000081d     0x10b5 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+                0x0000085e      0x14d CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
  .debug_loclists
-                0x000018d2      0x363 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
+                0x000009ab     0x10b5 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
  .debug_loclists
-                0x00001c35     0x15fb CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+                0x00001a60      0x363 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
  .debug_loclists
-                0x00003230       0x8e CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
+                0x00001dc3     0x15fb CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+ .debug_loclists
+                0x000033be       0x8e CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
 
-.debug_aranges  0x00000000      0x6d0
+.debug_aranges  0x00000000      0x738
  .debug_aranges
                 0x00000000       0x30 CMakeFiles/Example.elf.dir/Core/Src/74hc595.c.obj
  .debug_aranges
-                0x00000030       0x40 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+                0x00000030       0x48 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
  .debug_aranges
-                0x00000070       0x28 CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
+                0x00000078       0x28 CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
  .debug_aranges
-                0x00000098       0x48 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+                0x000000a0       0x48 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
  .debug_aranges
-                0x000000e0       0x30 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
+                0x000000e8       0x30 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
  .debug_aranges
-                0x00000110       0x20 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+                0x00000118       0x28 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
  .debug_aranges
-                0x00000130       0x20 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
+                0x00000140       0x20 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
  .debug_aranges
-                0x00000150       0x60 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+                0x00000160       0x60 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
  .debug_aranges
-                0x000001b0       0x28 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
+                0x000001c0       0x28 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
  .debug_aranges
-                0x000001d8       0x40 CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
+                0x000001e8       0x40 CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
  .debug_aranges
-                0x00000218       0xa8 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+                0x00000228       0x58 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
  .debug_aranges
-                0x000002c0      0x118 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
+                0x00000280       0xa8 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
  .debug_aranges
-                0x000003d8      0x2d0 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+                0x00000328      0x118 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
  .debug_aranges
-                0x000006a8       0x28 CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
+                0x00000440      0x2d0 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+ .debug_aranges
+                0x00000710       0x28 CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
 
 .debug_rnglists
-                0x00000000      0x68c
+                0x00000000      0x6d7
  .debug_rnglists
                 0x00000000       0x2b CMakeFiles/Example.elf.dir/Core/Src/74hc595.c.obj
  .debug_rnglists
-                0x0000002b       0x4f CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+                0x0000002b       0x57 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
  .debug_rnglists
-                0x0000007a       0x3e CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
+                0x00000082       0x3e CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
  .debug_rnglists
-                0x000000b8       0x7f CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+                0x000000c0       0x7f CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
  .debug_rnglists
-                0x00000137       0x49 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
+                0x0000013f       0x49 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
  .debug_rnglists
-                0x00000180       0x13 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+                0x00000188       0x19 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
  .debug_rnglists
-                0x00000193       0x13 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
+                0x000001a1       0x13 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
  .debug_rnglists
-                0x000001a6       0x43 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+                0x000001b4       0x43 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
  .debug_rnglists
-                0x000001e9       0x19 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
+                0x000001f7       0x19 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
  .debug_rnglists
-                0x00000202       0x2b CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
+                0x00000210       0x2b CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
  .debug_rnglists
-                0x0000022d       0x7b CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+                0x0000023b       0x3d CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
  .debug_rnglists
-                0x000002a8       0xe0 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
+                0x00000278       0x7b CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
  .debug_rnglists
-                0x00000388      0x2d9 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+                0x000002f3       0xe0 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
  .debug_rnglists
-                0x00000661       0x2b CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
+                0x000003d3      0x2d9 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+ .debug_rnglists
+                0x000006ac       0x2b CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
 
-.debug_line     0x00000000     0x55f3
- .debug_line    0x00000000      0x296 CMakeFiles/Example.elf.dir/Core/Src/74hc595.c.obj
- .debug_line    0x00000296      0x5bb CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
- .debug_line    0x00000851      0x26a CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
- .debug_line    0x00000abb      0x48b CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
- .debug_line    0x00000f46      0x290 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
- .debug_line    0x000011d6      0x1b1 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
- .debug_line    0x00001387      0x196 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
- .debug_line    0x0000151d      0x156 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
- .debug_line    0x00001673       0x78 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
- .debug_line    0x000016eb      0x29b CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
- .debug_line    0x00001986      0xf7d CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
- .debug_line    0x00002903      0x92b CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
- .debug_line    0x0000322e     0x2026 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
- .debug_line    0x00005254      0x39f CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
+.debug_line     0x00000000     0x5a7a
+ .debug_line    0x00000000      0x275 CMakeFiles/Example.elf.dir/Core/Src/74hc595.c.obj
+ .debug_line    0x00000275      0x662 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+ .debug_line    0x000008d7      0x26a CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
+ .debug_line    0x00000b41      0x48b CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+ .debug_line    0x00000fcc      0x290 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
+ .debug_line    0x0000125c      0x26d CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+ .debug_line    0x000014c9      0x18f CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
+ .debug_line    0x00001658      0x156 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+ .debug_line    0x000017ae       0x78 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
+ .debug_line    0x00001826      0x29b CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
+ .debug_line    0x00001ac1      0x34c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
+ .debug_line    0x00001e0d      0xf7d CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+ .debug_line    0x00002d8a      0x92b CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
+ .debug_line    0x000036b5     0x2026 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+ .debug_line    0x000056db      0x39f CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
 
-.debug_str      0x00000000     0x20da
+.debug_str      0x00000000     0x22ee
  .debug_str     0x00000000      0x231 CMakeFiles/Example.elf.dir/Core/Src/74hc595.c.obj
                                 0x27f (size before relaxing)
- .debug_str     0x00000231      0x32f CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
-                                0x53d (size before relaxing)
- .debug_str     0x00000560       0x7a CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
+ .debug_str     0x00000231      0x336 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+                                0x544 (size before relaxing)
+ .debug_str     0x00000567       0x7a CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
                                 0x259 (size before relaxing)
- .debug_str     0x000005da      0x537 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+ .debug_str     0x000005e1      0x55e CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
                                 0x86c (size before relaxing)
- .debug_str     0x00000b11       0x6e CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
+ .debug_str     0x00000b3f       0x6e CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
                                 0x20a (size before relaxing)
- .debug_str     0x00000b7f      0x17c CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
-                                0x370 (size before relaxing)
- .debug_str     0x00000cfb       0x44 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
-                                0x24f (size before relaxing)
- .debug_str     0x00000d3f       0xd7 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+ .debug_str     0x00000bad      0x2d6 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+                                0x97a (size before relaxing)
+ .debug_str     0x00000e83       0x44 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
+                                0x263 (size before relaxing)
+ .debug_str     0x00000ec7       0xd7 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
                                 0x256 (size before relaxing)
- .debug_str     0x00000e16       0x6f CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
+ .debug_str     0x00000f9e       0x6f CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
                                  0xb0 (size before relaxing)
- .debug_str     0x00000e85      0x171 CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
+ .debug_str     0x0000100d      0x161 CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
                                 0x421 (size before relaxing)
- .debug_str     0x00000ff6      0x22b CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+ .debug_str     0x0000116e       0xba CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
+                                0x3b2 (size before relaxing)
+ .debug_str     0x00001228      0x20d CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
                                 0x599 (size before relaxing)
- .debug_str     0x00001221      0x417 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
+ .debug_str     0x00001435      0x417 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
                                 0x683 (size before relaxing)
- .debug_str     0x00001638      0x9e3 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+ .debug_str     0x0000184c      0x9e3 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
                                 0xe74 (size before relaxing)
- .debug_str     0x0000201b       0xbf CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
+ .debug_str     0x0000222f       0xbf CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
                                 0x349 (size before relaxing)
 
 .comment        0x00000000       0x45
@@ -2497,44 +2512,46 @@ LOAD f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/no
  .comment       0x00000045       0x46 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
  .comment       0x00000045       0x46 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
  .comment       0x00000045       0x46 CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
+ .comment       0x00000045       0x46 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
  .comment       0x00000045       0x46 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
  .comment       0x00000045       0x46 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
  .comment       0x00000045       0x46 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
  .comment       0x00000045       0x46 CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
 
-.debug_frame    0x00000000     0x15f0
+.debug_frame    0x00000000     0x16d0
  .debug_frame   0x00000000       0x6c CMakeFiles/Example.elf.dir/Core/Src/74hc595.c.obj
- .debug_frame   0x0000006c       0xcc CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
- .debug_frame   0x00000138       0x78 CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
- .debug_frame   0x000001b0       0xfc CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
- .debug_frame   0x000002ac       0x60 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
- .debug_frame   0x0000030c       0x30 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
- .debug_frame   0x0000033c       0x28 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
- .debug_frame   0x00000364       0xa0 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
- .debug_frame   0x00000404       0x6c CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
- .debug_frame   0x00000470      0x18c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
- .debug_frame   0x000005fc      0x228 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
- .debug_frame   0x00000824      0x690 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
- .debug_frame   0x00000eb4       0x44 CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
- .debug_frame   0x00000ef8       0xac f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
- .debug_frame   0x00000fa4       0x24 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
- .debug_frame   0x00000fc8       0x4c f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
- .debug_frame   0x00001014       0x38 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivsf3.o)
- .debug_frame   0x0000104c       0xc8 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
- .debug_frame   0x00001114       0x24 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
- .debug_frame   0x00001138      0x13c f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-findfp.o)
- .debug_frame   0x00001274       0x2c f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-init.o)
- .debug_frame   0x000012a0       0xb0 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-lock.o)
- .debug_frame   0x00001350       0x5c f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__call_atexit.o)
- .debug_frame   0x000013ac       0x20 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-atexit.o)
- .debug_frame   0x000013cc       0x34 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-fini.o)
- .debug_frame   0x00001400       0x34 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__atexit.o)
- .debug_frame   0x00001434       0x20 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-errno.o)
- .debug_frame   0x00001454       0x30 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libm.a(libm_a-w_sqrt.o)
- .debug_frame   0x00001484       0x38 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libm.a(libm_a-e_sqrt.o)
- .debug_frame   0x000014bc       0x50 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivdf3.o)
- .debug_frame   0x0000150c       0xc4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_cmpdf2.o)
- .debug_frame   0x000015d0       0x20 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_unorddf2.o)
+ .debug_frame   0x0000006c       0xdc CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+ .debug_frame   0x00000148       0x78 CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
+ .debug_frame   0x000001c0       0xfc CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+ .debug_frame   0x000002bc       0x60 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
+ .debug_frame   0x0000031c       0x54 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+ .debug_frame   0x00000370       0x28 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
+ .debug_frame   0x00000398       0xa0 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+ .debug_frame   0x00000438       0x6c CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
+ .debug_frame   0x000004a4       0xac CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
+ .debug_frame   0x00000550      0x18c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+ .debug_frame   0x000006dc      0x228 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
+ .debug_frame   0x00000904      0x690 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+ .debug_frame   0x00000f94       0x44 CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
+ .debug_frame   0x00000fd8       0xac f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00001084       0x24 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .debug_frame   0x000010a8       0x4c f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+ .debug_frame   0x000010f4       0x38 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivsf3.o)
+ .debug_frame   0x0000112c       0xc8 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+ .debug_frame   0x000011f4       0x24 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_fixunssfsi.o)
+ .debug_frame   0x00001218      0x13c f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-findfp.o)
+ .debug_frame   0x00001354       0x2c f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-init.o)
+ .debug_frame   0x00001380       0xb0 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-lock.o)
+ .debug_frame   0x00001430       0x5c f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__call_atexit.o)
+ .debug_frame   0x0000148c       0x20 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-atexit.o)
+ .debug_frame   0x000014ac       0x34 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-fini.o)
+ .debug_frame   0x000014e0       0x34 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__atexit.o)
+ .debug_frame   0x00001514       0x20 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-errno.o)
+ .debug_frame   0x00001534       0x30 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libm.a(libm_a-w_sqrt.o)
+ .debug_frame   0x00001564       0x38 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libm.a(libm_a-e_sqrt.o)
+ .debug_frame   0x0000159c       0x50 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivdf3.o)
+ .debug_frame   0x000015ec       0xc4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_cmpdf2.o)
+ .debug_frame   0x000016b0       0x20 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libgcc.a(_arm_unorddf2.o)
 
 .debug_line_str
                 0x00000000      0x16b

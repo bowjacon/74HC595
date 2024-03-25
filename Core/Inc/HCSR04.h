@@ -11,10 +11,14 @@
 #include "math.h"
 #include "my_config.h"
 
+#define HCSR04_START(x) do{\
+                            if(x==0)\
+                          /*关闭中断*/       EXTI->IMR &= ~(EXTI_Line1);\
+                            else\
+                         /*开启中断*/       EXTI->IMR |= EXTI_Line1;\
+                        }while(0);
 
-// #include "stm32f10x.h" // Device header
-
-#define TRIG  HCSR04_Trigger(void);
+#define TRIG(void)  HCSR04_Trigger(void)
 
 void Value_Processing(uint8_t *dist);
 

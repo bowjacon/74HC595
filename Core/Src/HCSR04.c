@@ -1,8 +1,15 @@
 #include "HCSR04.h"
 
+extern uint8_t ReadyFlag;
 volatile uint16_t mscount;
 extern volatile uint8_t GetFlag;
 extern volatile uint16_t Interval;
+volatile uint8_t RunFlag;
+
+void HCSR04_Init(void) {
+    HCSR04_START(0)
+    RunFlag = 0;
+}
 
 void HCSR04_Trigger(void) {
     GPIO_SetBits(GPIOA, TRIG_PIN);   // Set the TRIG_PIN high
@@ -11,12 +18,6 @@ void HCSR04_Trigger(void) {
 }
 
 void HCSR04_GetValue(float *dist) {
-    mscount = 0;
-    HCSR04_Trigger();
-    while (!GPIO_ReadInputDataBit(GPIOA, ECHO_PIN));
-    TIM_Cmd(TIM3, ENABLE);
-    while (GPIO_ReadInputDataBit(GPIOA, ECHO_PIN));
-    TIM_Cmd(TIM3, DISABLE);
     uint16_t Time = TIM_GetCounter(TIM3);
     TIM3->CNT = 0;
     *dist = (float) ((Time + mscount * 1000) / 58.0);
@@ -31,27 +32,38 @@ void Value_Processing(uint8_t *dist) {
     static float Test_sum;
     static uint16_t Step;
     float value;
-    if (!GetFlag) return;
-    else {
-        HCSR04_GetValue(&value);
-        Data[Step] = value;
-        Sum += value;
-        Test_sum += value;
-        Step++;
-        if (Step == Short_Count) {
-            if (Test_sum / Short_Count > (mean + 3 * sd) || Test_sum / Short_Count < (mean - 3 * sd)) {
-                Interval = Short_Distance_Interval;
-            } else {
-                Interval = Long_Distance_Interval;
-            }
-            Test_sum = 0;
-        } else if (Step == Process_Count) {
-            mean = Sum / Process_Count;
-            Data_Processing(Data, &Sum, &Step, dist, &sd, mean);
-            //当采样次数达到指定次数是开始处理数据
+    static uint8_t Sendflag = 1;
+    if (GetFlag) {
+        if (Sendflag) {
+            TRIG();
+            Sendflag = 0;
+            HCSR04_START(1)
+            RunFlag = 1;
         }
-        GetFlag = 0;
-    }
+        if (ReadyFlag) {
+            RunFlag = 0;
+            HCSR04_START(0)
+            HCSR04_GetValue(&value);
+            Data[Step] = value;
+            Sum += value;
+            Test_sum += value;
+            Step++;
+            if (Step == Short_Count) {
+                if (Test_sum / Short_Count > (mean + 3 * sd) || Test_sum / Short_Count < (mean - 3 * sd)) {
+                    Interval = Short_Distance_Interval;
+                } else {
+                    Interval = Long_Distance_Interval;
+                }
+                Test_sum = 0;
+            } else if (Step == Process_Count) {
+                mean = Sum / Process_Count;
+                Data_Processing(Data, &Sum, &Step, dist, &sd, mean);
+                //当采样次数达到指定次数是开始处理数据
+            }
+            GetFlag = 0;
+            Sendflag = 1;
+        }
+    } else return;
 }
 
 void Data_Processing(float *Data, float *Sum, uint16_t *step, uint8_t *dist, float *sd, float mean) {
@@ -84,7 +96,7 @@ void Data_Processing(float *Data, float *Sum, uint16_t *step, uint8_t *dist, flo
     *Sum = 0;
 }
 
-void ValueToNixie(float digit, uint8_t * dist) {
+void ValueToNixie(float digit, uint8_t *dist) {
     uint8_t integer_temp = (uint8_t) digit;
     uint8_t decimalP_temp = (uint8_t) ((digit - integer_temp) * 100);
     dist[3] = (integer_temp % 100) / 10;
