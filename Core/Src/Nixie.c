@@ -38,7 +38,7 @@ void SendNum(uint8_t num, uint8_t type) {
         else { SendByte(Cathode_List[num]); }
     }
     SendByte(reg);
-    Delay_us(1000);
+    Delay_ms(1);
 }
 
 /**
