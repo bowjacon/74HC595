@@ -2173,7 +2173,7 @@ LOAD f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/no
  .igot.plt      0x20000140        0x0 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp/crtbegin.o
                 0x20000140                        . = ALIGN (0x4)
 
-.bss            0x20000140      0x498 load address 0x08002400
+.bss            0x20000140      0x3d0 load address 0x08002400
                 0x20000140                        _sbss = .
                 0x20000140                        __bss_start__ = _sbss
  *(.bss)
@@ -2187,50 +2187,50 @@ LOAD f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/no
  .bss.Test_sum.2
                 0x20000164        0x4 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
  .bss.Sum.3     0x20000168        0x4 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
- .bss.Data.4    0x2000016c      0x190 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
- .bss.Step.5    0x200002fc        0x2 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
- .bss.Sendflag  0x200002fe        0x1 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
-                0x200002fe                Sendflag
- .bss.RunFlag   0x200002ff        0x1 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
-                0x200002ff                RunFlag
- .bss.mscount   0x20000300        0x2 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
-                0x20000300                mscount
- .bss.count.0   0x20000302        0x2 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
- .bss.Interval  0x20000304        0x2 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
-                0x20000304                Interval
- .bss.GetFlag   0x20000306        0x1 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
-                0x20000306                GetFlag
+ .bss.Data.4    0x2000016c       0xc8 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+ .bss.Step.5    0x20000234        0x2 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+ .bss.Sendflag  0x20000236        0x1 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+                0x20000236                Sendflag
+ .bss.RunFlag   0x20000237        0x1 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+                0x20000237                RunFlag
+ .bss.mscount   0x20000238        0x2 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+                0x20000238                mscount
+ .bss.count.0   0x2000023a        0x2 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+ .bss.Interval  0x2000023c        0x2 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+                0x2000023c                Interval
+ .bss.GetFlag   0x2000023e        0x1 CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+                0x2000023e                GetFlag
  .bss.ReadyFlag
-                0x20000307        0x1 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
-                0x20000307                ReadyFlag
- .bss.__sf      0x20000308      0x138 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-findfp.o)
-                0x20000308                __sf
+                0x2000023f        0x1 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+                0x2000023f                ReadyFlag
+ .bss.__sf      0x20000240      0x138 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-findfp.o)
+                0x20000240                __sf
  .bss.__lock___atexit_recursive_mutex
-                0x20000440        0x1 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-lock.o)
-                0x20000440                __lock___atexit_recursive_mutex
- *fill*         0x20000441        0x3 
- .bss.__atexit  0x20000444        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__call_atexit.o)
-                0x20000444                __atexit
+                0x20000378        0x1 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-lock.o)
+                0x20000378                __lock___atexit_recursive_mutex
+ *fill*         0x20000379        0x3 
+ .bss.__atexit  0x2000037c        0x4 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__call_atexit.o)
+                0x2000037c                __atexit
  .bss.__atexit0
-                0x20000448      0x190 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__atexit.o)
-                0x20000448                __atexit0
+                0x20000380      0x190 f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/nofp\libg.a(libc_a-__atexit.o)
+                0x20000380                __atexit0
  https://stackoverflow.com/questions/16835716/bss-vs-common-what-goes-where()
  */()
  *(COMMON)
-                0x200005d8                        . = ALIGN (0x4)
-                0x200005d8                        _ebss = .
-                0x200005d8                        __bss_end__ = _ebss
+                0x20000510                        . = ALIGN (0x4)
+                0x20000510                        _ebss = .
+                0x20000510                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x200005d8      0x600 load address 0x08002400
-                0x200005d8                        . = ALIGN (0x8)
+                0x20000510      0x600 load address 0x08002400
+                0x20000510                        . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x200007d8                        . = (. + _Min_Heap_Size)
- *fill*         0x200005d8      0x200 
-                0x20000bd8                        . = (. + _Min_Stack_Size)
- *fill*         0x200007d8      0x400 
-                0x20000bd8                        . = ALIGN (0x8)
+                0x20000710                        . = (. + _Min_Heap_Size)
+ *fill*         0x20000510      0x200 
+                0x20000b10                        . = (. + _Min_Stack_Size)
+ *fill*         0x20000710      0x400 
+                0x20000b10                        . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -2448,22 +2448,22 @@ LOAD f:/my_app/sysgcc/arm-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7-m/no
  .debug_rnglists
                 0x00000698       0x2b CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
 
-.debug_line     0x00000000     0x5a66
+.debug_line     0x00000000     0x5a64
  .debug_line    0x00000000      0x275 CMakeFiles/Example.elf.dir/Core/Src/74hc595.c.obj
- .debug_line    0x00000275      0x640 CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
- .debug_line    0x000008b5      0x26a CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
- .debug_line    0x00000b1f      0x48f CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
- .debug_line    0x00000fae      0x290 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
- .debug_line    0x0000123e      0x26f CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
- .debug_line    0x000014ad      0x197 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
- .debug_line    0x00001644      0x156 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
- .debug_line    0x0000179a       0x78 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
- .debug_line    0x00001812      0x29b CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
- .debug_line    0x00001aad      0x34c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
- .debug_line    0x00001df9      0xf7d CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
- .debug_line    0x00002d76      0x92b CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
- .debug_line    0x000036a1     0x2026 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
- .debug_line    0x000056c7      0x39f CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
+ .debug_line    0x00000275      0x63e CMakeFiles/Example.elf.dir/Core/Src/HCSR04.c.obj
+ .debug_line    0x000008b3      0x26a CMakeFiles/Example.elf.dir/Core/Src/Nixie.c.obj
+ .debug_line    0x00000b1d      0x48f CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
+ .debug_line    0x00000fac      0x290 CMakeFiles/Example.elf.dir/Core/Src/delay.c.obj
+ .debug_line    0x0000123c      0x26f CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+ .debug_line    0x000014ab      0x197 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
+ .debug_line    0x00001642      0x156 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj
+ .debug_line    0x00001798       0x78 CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj
+ .debug_line    0x00001810      0x29b CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj
+ .debug_line    0x00001aab      0x34c CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj
+ .debug_line    0x00001df7      0xf7d CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj
+ .debug_line    0x00002d74      0x92b CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj
+ .debug_line    0x0000369f     0x2026 CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj
+ .debug_line    0x000056c5      0x39f CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj
 
 .debug_str      0x00000000     0x22ee
  .debug_str     0x00000000      0x231 CMakeFiles/Example.elf.dir/Core/Src/74hc595.c.obj
