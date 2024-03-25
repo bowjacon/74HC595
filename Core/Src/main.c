@@ -9,7 +9,7 @@ int main(void) {
     H595Init();
     Timer_Init();
     HCSR04_Init();
-    uint8_t dist[4];
+    uint8_t dist[5];
     while (1) {
 //        TRIG();
         Value_Processing(dist);

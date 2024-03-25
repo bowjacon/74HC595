@@ -1,5 +1,6 @@
 #include "Nixie.h"
 
+extern volatile uint8_t Dot_Flag;
 enum Rge_Num {
     Reg_1 = 0x1A, Reg_2 = 0x1C, Reg_3 = 0x10, Reg_4 = 0x08
 };
@@ -8,30 +9,35 @@ enum Rge_Num {
 // 第四位数码管的指令为0x08,前两个数码管为共阳极,后两个数码管为共阴极
 void SendNum(uint8_t num, uint8_t type) {
     DataClear();
+    uint8_t reg;
     switch (type) {
         case 1: {
-            SendByte(Anode_List[num]);
-            SendByte(Reg_1);
+            reg = Reg_1;
             break;
         }
         case 2: {
-            SendByte(Anode_List[num]);
-            SendByte(Reg_2);
+            reg = Reg_2;
             break;
         }
         case 3: {
-            SendByte(Cathode_List[num]);
-            SendByte(Reg_3);
+            reg = Reg_3;
             break;
         }
         case 4: {
-            SendByte(Cathode_List[num]);
-            SendByte(Reg_4);
+            reg = Reg_4;
             break;
         }
         default:
-            break;
+            return;
     }
+    if (type <= 2) {
+        if (Dot_Flag == type) { SendByte(Anode_List[num] & 0b01111111); }
+        else { SendByte(Anode_List[num]); }
+    } else {
+        if (Dot_Flag == type) { SendByte(Cathode_List[num] | 0b10000000); }
+        else { SendByte(Cathode_List[num]); }
+    }
+    SendByte(reg);
     Delay_us(1000);
 }
 

@@ -4,10 +4,11 @@ extern uint8_t ReadyFlag;
 volatile uint16_t mscount;
 extern volatile uint8_t GetFlag;
 extern volatile uint16_t Interval;
+volatile uint8_t Dot_Flag;
 uint8_t Sendflag;
 
 void HCSR04_Init(void) {
-    RunFlag = 0;
+//    RunFlag = 0;
     Sendflag = 1;
 }
 
@@ -92,10 +93,33 @@ void Data_Processing(float *Data, float *Sum, uint16_t *step, uint8_t *dist, flo
 }
 
 void ValueToNixie(float digit, uint8_t *dist) {
-    uint8_t integer_temp = (uint8_t) digit;
-    uint8_t decimalP_temp = (uint8_t) ((digit - integer_temp) * 100);
-    dist[3] = (integer_temp % 100) / 10;
-    dist[2] = (integer_temp % 100) % 10;
-    dist[1] = decimalP_temp / 10;
-    dist[0] = decimalP_temp % 10;
+    uint16_t integer_part = (uint16_t) digit;
+    uint16_t decimal_part = (uint16_t) ((digit - integer_part) * 1000); // Get three decimal places
+
+    if (digit < 10.0) {
+        dist[3] = integer_part;
+        dist[2] = decimal_part / 100;
+        dist[1] = (decimal_part % 100) / 10;
+        dist[0] = decimal_part % 10;
+        Dot_Flag = 4;
+    } else if (digit < 100.0) {
+        dist[3] = integer_part / 10;
+        dist[2] = integer_part % 10;
+        dist[1] = decimal_part / 100;
+        dist[0] = (decimal_part % 100) / 10;
+        Dot_Flag = 3;
+    } else if (digit < 1000.0) {
+        dist[3] = integer_part / 100;
+        dist[2] = (integer_part % 100) / 10;
+        dist[1] = integer_part % 10;
+        dist[0] = decimal_part / 100;
+        Dot_Flag = 2;
+    } else {
+        dist[3] = integer_part / 1000;
+        dist[2] = (integer_part % 1000) / 100;
+        dist[1] = (integer_part % 100) / 10;
+        dist[0] = integer_part % 10;
+        Dot_Flag = 1;
+    }
 }
+
