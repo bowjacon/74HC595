@@ -1,3 +1,0 @@
-F:/For-Job/Program/Project-HCSR04-7REG-74HC595/cmake-build-debug/CMakeFiles/Example.elf.dir
-F:/For-Job/Program/Project-HCSR04-7REG-74HC595/cmake-build-debug/CMakeFiles/edit_cache.dir
-F:/For-Job/Program/Project-HCSR04-7REG-74HC595/cmake-build-debug/CMakeFiles/rebuild_cache.dir
