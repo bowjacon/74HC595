@@ -153,6 +153,30 @@ Core/Src/Timer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/Timer.c.s
 .PHONY : Core/Src/Timer.c.s
 
+Core/Src/dalay.obj: Core/Src/dalay.c.obj
+.PHONY : Core/Src/dalay.obj
+
+# target to build an object file
+Core/Src/dalay.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/dalay.c.obj
+.PHONY : Core/Src/dalay.c.obj
+
+Core/Src/dalay.i: Core/Src/dalay.c.i
+.PHONY : Core/Src/dalay.i
+
+# target to preprocess a source file
+Core/Src/dalay.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/dalay.c.i
+.PHONY : Core/Src/dalay.c.i
+
+Core/Src/dalay.s: Core/Src/dalay.c.s
+.PHONY : Core/Src/dalay.s
+
+# target to generate assembly for a file
+Core/Src/dalay.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/dalay.c.s
+.PHONY : Core/Src/dalay.c.s
+
 Core/Src/gpio.obj: Core/Src/gpio.c.obj
 .PHONY : Core/Src/gpio.obj
 
@@ -845,6 +869,9 @@ help:
 	@echo "... Core/Src/Timer.obj"
 	@echo "... Core/Src/Timer.i"
 	@echo "... Core/Src/Timer.s"
+	@echo "... Core/Src/dalay.obj"
+	@echo "... Core/Src/dalay.i"
+	@echo "... Core/Src/dalay.s"
 	@echo "... Core/Src/gpio.obj"
 	@echo "... Core/Src/gpio.i"
 	@echo "... Core/Src/gpio.s"
