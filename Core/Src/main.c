@@ -1,18 +1,10 @@
 #include "main.h"
 
-//extern volatile uint8_t GetFlag;
-extern volatile uint8_t RunFlag;
-
 int main(void) {
-//    float distance = 0;
-    My_GPIO_Init();
-    H595Init();
-    Timer_Init();
-    HCSR04_Init();
-    uint8_t dist[5];
-    while (1) {
-//        TRIG();
-        Value_Processing(dist);
-        DisplayNixie(dist);
-    }
+  My_GPIO_Init();
+  while (1) {
+    GPIO_SetBits(GPIOA, GPIO_Pin_6);
+    Delay_ms(500);
+    GPIO_ResetBits(GPIOA, GPIO_Pin_6);
+  }
 }

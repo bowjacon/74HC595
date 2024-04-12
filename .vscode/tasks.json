@@ -1,18 +1,26 @@
 {
   "tasks": [
+    // {
+    //   "type": "shell",
+    //   "label": "configure cmake",
+    //   "command": "cmake",
+    //   "args": [
+    //     "-DCMAKE_EXPORT_COMPILE_COMMANDS=1",
+    //     "-G",
+    //     "Unix Makefiles",
+    //     "-B",
+    //     "${workspaceFolder}/build",
+    //   ],
+    //   "options": {
+    //     "cwd": "${workspaceFolder}"
+    //   }
+    // },
     {
       "type": "shell",
-      "label": "configure cmake",
-      "command": "cmake",
-      "args": [
-        "-DCMAKE_EXPORT_COMPILE_COMMANDS=1",
-        "-G",
-        "MinGW Makefiles",
-        "-B",
-        "${workspaceFolder}/build"
-      ],
+      "label": "configure make",
+      "command": "make",
       "options": {
-        "cwd": "${workspaceFolder}"
+        "cwd": "${workspaceFolder}/build"
       }
     },
     {
@@ -21,7 +29,9 @@
       "command": "openocd",
       "args": [
         "-f",
-        "./CMSIS_DAP.cfg",
+        "interface/stlink.cfg",
+        "-f",
+        "target/stm32f1x.cfg",
         "-c",
         "gdb_port disabled",
         "-c",
@@ -34,7 +44,7 @@
         "shutdown"
       ],
       //先运行configure cmake
-    //   "dependsOn": "configure cmake",
+      "dependsOn": "configure make",
       "problemMatcher": [],
       "group": {
         "kind": "build",

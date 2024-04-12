@@ -1,7 +1,7 @@
 #ifndef __TIMER_H
 #define __TIMER_H
 
-#include "my_config.h"
+// #include "my_config.h"
 #include "stm32f10x.h"
 #include "stm32f10x_conf.h"
 
