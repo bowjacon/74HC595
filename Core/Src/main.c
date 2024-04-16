@@ -1,8 +1,8 @@
+// #include "stm32c8t6.h"
 #include "main.h"
-
 int main(void) {
-  My_GPIO_Init();
+  LCD_Init();
+  LCD_DisplayString("Hello World");
   while (1) {
-  
   }
 }

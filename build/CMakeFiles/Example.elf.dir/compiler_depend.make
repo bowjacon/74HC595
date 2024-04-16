@@ -116,6 +116,47 @@ CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj: ../Core/Src/gpio.c \
   ../Drivers/Inc/stm32f10x_wwdg.h \
   ../Drivers/Inc/misc.h
 
+CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.obj: ../Core/Src/lcd1602.c \
+  ../Core/Inc/lcd1602.h \
+  ../Core/Inc/delay.h \
+  ../Drivers/Inc/stm32f10x.h \
+  ../Drivers/Inc/core_cm3.h \
+  /home/miku/toolchain/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
+  /home/miku/toolchain/gcc-arm-none-eabi/arm-none-eabi/include/stdint.h \
+  /home/miku/toolchain/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h \
+  /home/miku/toolchain/gcc-arm-none-eabi/arm-none-eabi/include/sys/features.h \
+  /home/miku/toolchain/gcc-arm-none-eabi/arm-none-eabi/include/_newlib_version.h \
+  /home/miku/toolchain/gcc-arm-none-eabi/arm-none-eabi/include/sys/_intsup.h \
+  /home/miku/toolchain/gcc-arm-none-eabi/arm-none-eabi/include/sys/_stdint.h \
+  ../Drivers/Inc/system_stm32f10x.h \
+  ../Core/Inc/stm32f10x_conf.h \
+  ../Drivers/Inc/stm32f10x_adc.h \
+  ../Drivers/Inc/stm32f10x.h \
+  ../Drivers/Inc/stm32f10x_bkp.h \
+  ../Drivers/Inc/stm32f10x_can.h \
+  ../Drivers/Inc/stm32f10x_cec.h \
+  ../Drivers/Inc/stm32f10x_crc.h \
+  ../Drivers/Inc/stm32f10x_dac.h \
+  ../Drivers/Inc/stm32f10x_dbgmcu.h \
+  ../Drivers/Inc/stm32f10x_dma.h \
+  ../Drivers/Inc/stm32f10x_exti.h \
+  ../Drivers/Inc/stm32f10x_flash.h \
+  ../Drivers/Inc/stm32f10x_fsmc.h \
+  ../Drivers/Inc/stm32f10x_gpio.h \
+  ../Drivers/Inc/stm32f10x_i2c.h \
+  ../Drivers/Inc/stm32f10x_iwdg.h \
+  ../Drivers/Inc/stm32f10x_pwr.h \
+  ../Drivers/Inc/stm32f10x_rcc.h \
+  ../Drivers/Inc/stm32f10x_rtc.h \
+  ../Drivers/Inc/stm32f10x_sdio.h \
+  ../Drivers/Inc/stm32f10x_spi.h \
+  ../Drivers/Inc/stm32f10x_tim.h \
+  ../Drivers/Inc/stm32f10x_usart.h \
+  ../Drivers/Inc/stm32f10x_wwdg.h \
+  ../Drivers/Inc/misc.h \
+  ../Core/Inc/gpio.h \
+  ../Core/Inc/stm32f10x_conf.h
+
 CMakeFiles/Example.elf.dir/Core/Src/main.c.obj: ../Core/Src/main.c \
   ../Core/Inc/main.h \
   ../Core/Inc/delay.h \
@@ -156,7 +197,8 @@ CMakeFiles/Example.elf.dir/Core/Src/main.c.obj: ../Core/Src/main.c \
   ../Drivers/Inc/misc.h \
   ../Core/Inc/Timer.h \
   ../Core/Inc/stm32f10x_conf.h \
-  ../Core/Inc/gpio.h
+  ../Core/Inc/gpio.h \
+  ../Core/Inc/lcd1602.h
 
 CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj: ../Core/Src/stm32f10x_it.c \
   ../Core/Inc/stm32f10x_it.h \
@@ -1085,6 +1127,10 @@ CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj: ../Drivers/Src/sy
 
 ../Drivers/Src/stm32f10x_iwdg.c:
 
+../Drivers/Src/stm32f10x_i2c.c:
+
+../Drivers/Src/stm32f10x_gpio.c:
+
 ../Drivers/Src/stm32f10x_wwdg.c:
 
 ../Drivers/Inc/stm32f10x_iwdg.h:
@@ -1143,9 +1189,13 @@ CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj: ../Drivers/Src/sy
 
 ../Drivers/Inc/system_stm32f10x.h:
 
+../Core/Src/lcd1602.c:
+
 /home/miku/toolchain/gcc-arm-none-eabi/arm-none-eabi/include/sys/_stdint.h:
 
 /home/miku/toolchain/gcc-arm-none-eabi/arm-none-eabi/include/stdint.h:
+
+../Core/Inc/lcd1602.h:
 
 /home/miku/toolchain/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h:
 
@@ -1204,7 +1254,3 @@ CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj: ../Drivers/Src/sy
 ../Drivers/Inc/stm32f10x_rcc.h:
 
 ../Drivers/Src/stm32f10x_flash.c:
-
-../Drivers/Src/stm32f10x_gpio.c:
-
-../Drivers/Src/stm32f10x_i2c.c:

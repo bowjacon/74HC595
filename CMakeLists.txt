@@ -6,17 +6,11 @@ set(CMAKE_SYSTEM_VERSION 1)
 
 # 设置构建项目所支持的最低CMake版本
 cmake_minimum_required(VERSION 3.13)
-
-# set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
-# set(CMAKE_BUILD_TYPE Debug)
-# set(CMAKE_C_COMPILER clang)
-# set(CMAKE_CXX_COMPILER clang++)
-# set(CMAKE_ASM_COMPILER clang)
-# set(CMAKE_AR llvm-ar-14)
-# set(CMAKE_OBJCOPY llvm-objcopy-14)
-# set(CMAKE_OBJDUMP llvm-objdump-14)
-# set(SIZE llvm-size-14)
-# 设置编译C、C++、ASM的交叉编译器
+find_program(CCACHE_PROGRAM ccache)
+if(CCACHE_PROGRAM)
+    set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
+    set(CMAKE_CUDA_COMPILER_LAUNCHER "${CCACHE_PROGRAM}") # CMake 3.9+
+endif()
 set(CMAKE_C_COMPILER arm-none-eabi-gcc)
 set(CMAKE_CXX_COMPILER arm-none-eabi-g++)
 set(CMAKE_ASM_COMPILER  arm-none-eabi-gcc)
@@ -85,7 +79,9 @@ add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
 # 设置二进制文件的输出路径
 set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
 # set(BIN_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin)
-
+if(GCC_VERSION VERSION_GREATER 12.2 OR GCC_VERSION VERSION_EQUAL 12.2)
+    add_link_options(-Wl,--no-warn-rwx-segments)
+endif()
 # 生成二进制文件
 add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
         COMMAND ${CMAKE_OBJCOPY} -Oihex $<TARGET_FILE:${PROJECT_NAME}.elf> ${HEX_FILE}

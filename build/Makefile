@@ -201,6 +201,30 @@ Core/Src/gpio.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/gpio.c.s
 .PHONY : Core/Src/gpio.c.s
 
+Core/Src/lcd1602.obj: Core/Src/lcd1602.c.obj
+.PHONY : Core/Src/lcd1602.obj
+
+# target to build an object file
+Core/Src/lcd1602.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.obj
+.PHONY : Core/Src/lcd1602.c.obj
+
+Core/Src/lcd1602.i: Core/Src/lcd1602.c.i
+.PHONY : Core/Src/lcd1602.i
+
+# target to preprocess a source file
+Core/Src/lcd1602.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.i
+.PHONY : Core/Src/lcd1602.c.i
+
+Core/Src/lcd1602.s: Core/Src/lcd1602.c.s
+.PHONY : Core/Src/lcd1602.s
+
+# target to generate assembly for a file
+Core/Src/lcd1602.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.s
+.PHONY : Core/Src/lcd1602.c.s
+
 Core/Src/main.obj: Core/Src/main.c.obj
 .PHONY : Core/Src/main.obj
 
@@ -875,6 +899,9 @@ help:
 	@echo "... Core/Src/gpio.obj"
 	@echo "... Core/Src/gpio.i"
 	@echo "... Core/Src/gpio.s"
+	@echo "... Core/Src/lcd1602.obj"
+	@echo "... Core/Src/lcd1602.i"
+	@echo "... Core/Src/lcd1602.s"
 	@echo "... Core/Src/main.obj"
 	@echo "... Core/Src/main.i"
 	@echo "... Core/Src/main.s"

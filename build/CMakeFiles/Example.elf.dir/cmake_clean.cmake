@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Example.elf.dir/Core/Src/dalay.c.obj.d"
   "CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj"
   "CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj.d"
+  "CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.obj"
+  "CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.obj.d"
   "CMakeFiles/Example.elf.dir/Core/Src/main.c.obj"
   "CMakeFiles/Example.elf.dir/Core/Src/main.c.obj.d"
   "CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj"

@@ -21,7 +21,11 @@
       "command": "make",
       "options": {
         "cwd": "${workspaceFolder}/build"
-      }
+      },
+      "args": [
+        "-j",
+        "12"
+      ],
     },
     {
       "label": "OpenOCD",
