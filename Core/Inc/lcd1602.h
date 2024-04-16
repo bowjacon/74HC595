@@ -7,6 +7,7 @@
 #define LCD_DATA_PIN                                                           \
   GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 |             \
       GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7
+#define BUSY_PIN GPIO_Pin_7
 #define LCD_SIGNAL_PORT GPIOB
 #define LCD_RS_PIN GPIO_Pin_0
 #define LCD_RW_PIN GPIO_Pin_1
@@ -18,6 +19,6 @@
 #define RW(X) GPIO_WriteBit(LCD_SIGNAL_PORT, LCD_RW_PIN, X)
 #define EN(X) GPIO_WriteBit(LCD_SIGNAL_PORT, LCD_EN_PIN, X)
 void LCD_Init(void);
-void LCD_DisplayString(char *str);
+void LCD_DisplayString(uint8_t x,uint8_t y,char *str) ;
 
 #endif
