@@ -5,13 +5,13 @@
 # compile C with /home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc
 ASM_DEFINES = -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER
 
-ASM_INCLUDES = -I/home/miku/文档/74HC595/Core/Inc -I/home/miku/文档/74HC595/Drivers/Inc
+ASM_INCLUDES = -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc
 
 ASM_FLAGS = -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft
 
 C_DEFINES = -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER
 
-C_INCLUDES = -I/home/miku/文档/74HC595/Core/Inc -I/home/miku/文档/74HC595/Drivers/Inc
+C_INCLUDES = -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc
 
 C_FLAGS = -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11
 
