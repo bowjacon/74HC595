@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Example.elf.dir/Core/Src/74HC595.c.obj"
+  "CMakeFiles/Example.elf.dir/Core/Src/74HC595.c.obj.d"
   "CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj"
   "CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj.d"
   "CMakeFiles/Example.elf.dir/Core/Src/dalay.c.obj"

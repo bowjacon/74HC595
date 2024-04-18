@@ -129,6 +129,30 @@ Example.elf/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/build
 .PHONY : Example.elf/fast
 
+Core/Src/74HC595.obj: Core/Src/74HC595.c.obj
+.PHONY : Core/Src/74HC595.obj
+
+# target to build an object file
+Core/Src/74HC595.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/74HC595.c.obj
+.PHONY : Core/Src/74HC595.c.obj
+
+Core/Src/74HC595.i: Core/Src/74HC595.c.i
+.PHONY : Core/Src/74HC595.i
+
+# target to preprocess a source file
+Core/Src/74HC595.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/74HC595.c.i
+.PHONY : Core/Src/74HC595.c.i
+
+Core/Src/74HC595.s: Core/Src/74HC595.c.s
+.PHONY : Core/Src/74HC595.s
+
+# target to generate assembly for a file
+Core/Src/74HC595.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/74HC595.c.s
+.PHONY : Core/Src/74HC595.c.s
+
 Core/Src/Timer.obj: Core/Src/Timer.c.obj
 .PHONY : Core/Src/Timer.obj
 
@@ -890,6 +914,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Example.elf"
+	@echo "... Core/Src/74HC595.obj"
+	@echo "... Core/Src/74HC595.i"
+	@echo "... Core/Src/74HC595.s"
 	@echo "... Core/Src/Timer.obj"
 	@echo "... Core/Src/Timer.i"
 	@echo "... Core/Src/Timer.s"

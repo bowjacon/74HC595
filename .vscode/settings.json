@@ -1,0 +1,7 @@
+{
+  "fileheader.configObj": {
+    "designAddHead": true // 命令行生成图案注释 默认关闭该功能
+  },
+  "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontLigatures": true,
+}

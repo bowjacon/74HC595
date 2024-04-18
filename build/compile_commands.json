@@ -1,6 +1,11 @@
 [
 {
   "directory": "/home/miku/文档/74HC595/build",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/文档/74HC595/Core/Inc -I/home/miku/文档/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/74HC595.c.obj -c /home/miku/文档/74HC595/Core/Src/74HC595.c",
+  "file": "/home/miku/文档/74HC595/Core/Src/74HC595.c"
+},
+{
+  "directory": "/home/miku/文档/74HC595/build",
   "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/文档/74HC595/Core/Inc -I/home/miku/文档/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj -c /home/miku/文档/74HC595/Core/Src/Timer.c",
   "file": "/home/miku/文档/74HC595/Core/Src/Timer.c"
 },
