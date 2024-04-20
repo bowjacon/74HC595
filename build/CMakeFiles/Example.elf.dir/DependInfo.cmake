@@ -17,6 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
   "DEBUG"
   "STM32F10X_MD"
   "USE_STDPERIPH_DRIVER"
+  "VECT_TAB_SRAM"
   )
 
 # The include file search paths:
