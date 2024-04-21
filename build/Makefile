@@ -129,6 +129,30 @@ Example.elf/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/build
 .PHONY : Example.elf/fast
 
+Core/MPU6050/MPU6050.obj: Core/MPU6050/MPU6050.c.obj
+.PHONY : Core/MPU6050/MPU6050.obj
+
+# target to build an object file
+Core/MPU6050/MPU6050.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+.PHONY : Core/MPU6050/MPU6050.c.obj
+
+Core/MPU6050/MPU6050.i: Core/MPU6050/MPU6050.c.i
+.PHONY : Core/MPU6050/MPU6050.i
+
+# target to preprocess a source file
+Core/MPU6050/MPU6050.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.i
+.PHONY : Core/MPU6050/MPU6050.c.i
+
+Core/MPU6050/MPU6050.s: Core/MPU6050/MPU6050.c.s
+.PHONY : Core/MPU6050/MPU6050.s
+
+# target to generate assembly for a file
+Core/MPU6050/MPU6050.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.s
+.PHONY : Core/MPU6050/MPU6050.c.s
+
 Core/Src/74HC595.obj: Core/Src/74HC595.c.obj
 .PHONY : Core/Src/74HC595.obj
 
@@ -224,6 +248,30 @@ Core/Src/gpio.s: Core/Src/gpio.c.s
 Core/Src/gpio.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/gpio.c.s
 .PHONY : Core/Src/gpio.c.s
+
+Core/Src/i2c.obj: Core/Src/i2c.c.obj
+.PHONY : Core/Src/i2c.obj
+
+# target to build an object file
+Core/Src/i2c.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+.PHONY : Core/Src/i2c.c.obj
+
+Core/Src/i2c.i: Core/Src/i2c.c.i
+.PHONY : Core/Src/i2c.i
+
+# target to preprocess a source file
+Core/Src/i2c.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/i2c.c.i
+.PHONY : Core/Src/i2c.c.i
+
+Core/Src/i2c.s: Core/Src/i2c.c.s
+.PHONY : Core/Src/i2c.s
+
+# target to generate assembly for a file
+Core/Src/i2c.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.elf.dir/build.make CMakeFiles/Example.elf.dir/Core/Src/i2c.c.s
+.PHONY : Core/Src/i2c.c.s
 
 Core/Src/lcd1602.obj: Core/Src/lcd1602.c.obj
 .PHONY : Core/Src/lcd1602.obj
@@ -914,6 +962,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Example.elf"
+	@echo "... Core/MPU6050/MPU6050.obj"
+	@echo "... Core/MPU6050/MPU6050.i"
+	@echo "... Core/MPU6050/MPU6050.s"
 	@echo "... Core/Src/74HC595.obj"
 	@echo "... Core/Src/74HC595.i"
 	@echo "... Core/Src/74HC595.s"
@@ -926,6 +977,9 @@ help:
 	@echo "... Core/Src/gpio.obj"
 	@echo "... Core/Src/gpio.i"
 	@echo "... Core/Src/gpio.s"
+	@echo "... Core/Src/i2c.obj"
+	@echo "... Core/Src/i2c.i"
+	@echo "... Core/Src/i2c.s"
 	@echo "... Core/Src/lcd1602.obj"
 	@echo "... Core/Src/lcd1602.i"
 	@echo "... Core/Src/lcd1602.s"

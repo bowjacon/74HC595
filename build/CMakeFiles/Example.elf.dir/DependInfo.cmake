@@ -28,10 +28,12 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/miku/disk/lcd1602/74HC595/Core/MPU6050/MPU6050.c" "CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj" "gcc" "CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj.d"
   "/home/miku/disk/lcd1602/74HC595/Core/Src/74HC595.c" "CMakeFiles/Example.elf.dir/Core/Src/74HC595.c.obj" "gcc" "CMakeFiles/Example.elf.dir/Core/Src/74HC595.c.obj.d"
   "/home/miku/disk/lcd1602/74HC595/Core/Src/Timer.c" "CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj" "gcc" "CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj.d"
   "/home/miku/disk/lcd1602/74HC595/Core/Src/dalay.c" "CMakeFiles/Example.elf.dir/Core/Src/dalay.c.obj" "gcc" "CMakeFiles/Example.elf.dir/Core/Src/dalay.c.obj.d"
   "/home/miku/disk/lcd1602/74HC595/Core/Src/gpio.c" "CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj" "gcc" "CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj.d"
+  "/home/miku/disk/lcd1602/74HC595/Core/Src/i2c.c" "CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj" "gcc" "CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj.d"
   "/home/miku/disk/lcd1602/74HC595/Core/Src/lcd1602.c" "CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.obj" "gcc" "CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.obj.d"
   "/home/miku/disk/lcd1602/74HC595/Core/Src/main.c" "CMakeFiles/Example.elf.dir/Core/Src/main.c.obj" "gcc" "CMakeFiles/Example.elf.dir/Core/Src/main.c.obj.d"
   "/home/miku/disk/lcd1602/74HC595/Core/Src/stm32f10x_it.c" "CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj" "gcc" "CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj.d"

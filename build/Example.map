@@ -33,6 +33,533 @@ Discarded input sections
  .ARM.exidx     0x0000000000000000       0x10 /home/miku/toolchain/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
  .ARM.attributes
                 0x0000000000000000       0x1b /home/miku/toolchain/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ .text          0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .data          0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .bss           0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050  0x0000000000000000        0xc CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_initialize
+                0x0000000000000000       0x4c CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_testConnection
+                0x0000000000000000       0x2c CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getAuxVDDIOLevel
+                0x0000000000000000       0x1c CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setAuxVDDIOLevel
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getRate
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setRate
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getExternalFrameSync
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setExternalFrameSync
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getDLPFMode
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setDLPFMode
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getFullScaleGyroRange
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setFullScaleGyroRange
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getAccelXSelfTest
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setAccelXSelfTest
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getAccelYSelfTest
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setAccelYSelfTest
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getAccelZSelfTest
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setAccelZSelfTest
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getFullScaleAccelRange
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setFullScaleAccelRange
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getDHPFMode
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setDHPFMode
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getFreefallDetectionThreshold
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setFreefallDetectionThreshold
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getFreefallDetectionDuration
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setFreefallDetectionDuration
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getMotionDetectionThreshold
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setMotionDetectionThreshold
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getMotionDetectionDuration
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setMotionDetectionDuration
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getZeroMotionDetectionThreshold
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setZeroMotionDetectionThreshold
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getZeroMotionDetectionDuration
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setZeroMotionDetectionDuration
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getTempFIFOEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setTempFIFOEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getXGyroFIFOEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setXGyroFIFOEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getYGyroFIFOEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setYGyroFIFOEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getZGyroFIFOEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setZGyroFIFOEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getAccelFIFOEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setAccelFIFOEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave2FIFOEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlave2FIFOEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave1FIFOEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlave1FIFOEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave0FIFOEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlave0FIFOEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getMultiMasterEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setMultiMasterEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getWaitForExternalSensorEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setWaitForExternalSensorEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave3FIFOEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlave3FIFOEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlaveReadWriteTransitionEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlaveReadWriteTransitionEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getMasterClockSpeed
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setMasterClockSpeed
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlaveAddress
+                0x0000000000000000       0x28 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlaveAddress
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlaveRegister
+                0x0000000000000000       0x28 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlaveRegister
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlaveEnabled
+                0x0000000000000000       0x30 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlaveEnabled
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlaveWordByteSwap
+                0x0000000000000000       0x30 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlaveWordByteSwap
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlaveWriteMode
+                0x0000000000000000       0x30 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlaveWriteMode
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlaveWordGroupOffset
+                0x0000000000000000       0x30 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlaveWordGroupOffset
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlaveDataLength
+                0x0000000000000000       0x30 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlaveDataLength
+                0x0000000000000000       0x28 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave4Address
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlave4Address
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave4Register
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlave4Register
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlave4OutputByte
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave4Enabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlave4Enabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave4InterruptEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlave4InterruptEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave4WriteMode
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlave4WriteMode
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave4MasterDelay
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlave4MasterDelay
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlate4InputByte
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getPassthroughStatus
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave4IsDone
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getLostArbitration
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave4Nack
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave3Nack
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave2Nack
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave1Nack
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlave0Nack
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getInterruptMode
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setInterruptMode
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getInterruptDrive
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setInterruptDrive
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getInterruptLatch
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setInterruptLatch
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getInterruptLatchClear
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setInterruptLatchClear
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getFSyncInterruptLevel
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setFSyncInterruptLevel
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getFSyncInterruptEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setFSyncInterruptEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getI2CBypassEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setI2CBypassEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getClockOutputEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setClockOutputEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntEnabled
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setIntEnabled
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntFreefallEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setIntFreefallEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntMotionEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setIntMotionEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntZeroMotionEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setIntZeroMotionEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntFIFOBufferOverflowEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setIntFIFOBufferOverflowEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntI2CMasterEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setIntI2CMasterEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntDataReadyEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setIntDataReadyEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntStatus
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntFreefallStatus
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntMotionStatus
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntZeroMotionStatus
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntFIFOBufferOverflowStatus
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntI2CMasterStatus
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntDataReadyStatus
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getMotion9
+                0x0000000000000000       0x5c CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getMotion6
+                0x0000000000000000       0x5c CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getAcceleration
+                0x0000000000000000       0x38 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getAccelerationX
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getAccelerationY
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getAccelerationZ
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getTemperature
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getRotation
+                0x0000000000000000       0x38 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getRotationX
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getRotationY
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getRotationZ
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getExternalSensorByte
+                0x0000000000000000       0x1c CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getExternalSensorWord
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getExternalSensorDWord
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getXNegMotionDetected
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getXPosMotionDetected
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getYNegMotionDetected
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getYPosMotionDetected
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getZNegMotionDetected
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getZPosMotionDetected
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getZeroMotionDetected
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlaveOutputByte
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getExternalShadowDelayEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setExternalShadowDelayEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSlaveDelayEnabled
+                0x0000000000000000       0x28 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSlaveDelayEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_resetGyroscopePath
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_resetAccelerometerPath
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_resetTemperaturePath
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getAccelerometerPowerOnDelay
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setAccelerometerPowerOnDelay
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getFreefallDetectionCounterDecrement
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setFreefallDetectionCounterDecrement
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getMotionDetectionCounterDecrement
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setMotionDetectionCounterDecrement
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getFIFOEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setFIFOEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getI2CMasterModeEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setI2CMasterModeEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_switchSPIEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_resetFIFO
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_resetI2CMaster
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_resetSensors
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_reset
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getSleepEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setSleepEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getWakeCycleEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setWakeCycleEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getTempSensorEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setTempSensorEnabled
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getClockSource
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setClockSource
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getWakeFrequency
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setWakeFrequency
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getStandbyXAccelEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setStandbyXAccelEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getStandbyYAccelEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setStandbyYAccelEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getStandbyZAccelEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setStandbyZAccelEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getStandbyXGyroEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setStandbyXGyroEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getStandbyYGyroEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setStandbyYGyroEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getStandbyZGyroEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setStandbyZGyroEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getFIFOCount
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getFIFOByte
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getFIFOBytes
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setFIFOByte
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getDeviceID
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setDeviceID
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getOTPBankValid
+                0x0000000000000000       0x1c CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setOTPBankValid
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getXGyroOffsetTC
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setXGyroOffsetTC
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getYGyroOffsetTC
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setYGyroOffsetTC
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getZGyroOffsetTC
+                0x0000000000000000       0x24 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setZGyroOffsetTC
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getXFineGain
+                0x0000000000000000       0x1c CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setXFineGain
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getYFineGain
+                0x0000000000000000       0x1c CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setYFineGain
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getZFineGain
+                0x0000000000000000       0x1c CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setZFineGain
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getXAccelOffset
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setXAccelOffset
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getYAccelOffset
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setYAccelOffset
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getZAccelOffset
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setZAccelOffset
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getXGyroOffset
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setXGyroOffset
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getYGyroOffset
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setYGyroOffset
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getZGyroOffset
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setZGyroOffset
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntPLLReadyEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setIntPLLReadyEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntDMPEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setIntDMPEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getDMPInt5Status
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getDMPInt4Status
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getDMPInt3Status
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getDMPInt2Status
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getDMPInt1Status
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getDMPInt0Status
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntPLLReadyStatus
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getIntDMPStatus
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getDMPEnabled
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setDMPEnabled
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_resetDMP
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setMemoryBank
+                0x0000000000000000       0x20 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setMemoryStartAddress
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_readMemoryByte
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_writeMemoryByte
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_readMemoryBlock
+                0x0000000000000000       0xc4 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getDMPConfig1
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setDMPConfig1
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_getDMPConfig2
+                0x0000000000000000       0x18 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .text.MPU6050_setDMPConfig2
+                0x0000000000000000       0x10 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .bss.mpu6050   0x0000000000000000        0xf CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .debug_info    0x0000000000000000     0x5226 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .debug_abbrev  0x0000000000000000      0x3c7 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .debug_loc     0x0000000000000000     0x1a17 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .debug_aranges
+                0x0000000000000000      0x818 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .debug_ranges  0x0000000000000000      0x8f0 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .debug_line    0x0000000000000000     0x2796 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .debug_str     0x0000000000000000     0x1f03 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .comment       0x0000000000000000       0x4a CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .debug_frame   0x0000000000000000     0x16c4 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
+ .ARM.attributes
+                0x0000000000000000       0x29 CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
  .text          0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/Src/74HC595.c.obj
  .data          0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/Src/74HC595.c.obj
  .bss           0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/Src/74HC595.c.obj
@@ -66,6 +593,31 @@ Discarded input sections
  .text          0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
  .data          0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
  .bss           0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+ .text          0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .data          0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .bss           0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .text.I2C_config
+                0x0000000000000000       0x74 CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .text.I2Cdev_writeByte
+                0x0000000000000000       0x80 CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .text.I2Cdev_readByte
+                0x0000000000000000       0xd4 CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .text.I2Cdev_writeBit
+                0x0000000000000000       0x14 CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .text.I2Cdev_readBit
+                0x0000000000000000       0x1c CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .debug_info    0x0000000000000000      0x977 CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .debug_abbrev  0x0000000000000000      0x19e CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .debug_loc     0x0000000000000000      0x2a6 CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .debug_aranges
+                0x0000000000000000       0x40 CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .debug_ranges  0x0000000000000000       0x30 CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .debug_line    0x0000000000000000      0x444 CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .debug_str     0x0000000000000000      0x55a CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .comment       0x0000000000000000       0x4a CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .debug_frame   0x0000000000000000       0xa4 CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
+ .ARM.attributes
+                0x0000000000000000       0x29 CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
  .text          0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.obj
  .data          0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.obj
  .bss           0x0000000000000000        0x0 CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.obj
@@ -1487,10 +2039,12 @@ Linker script and memory map
 LOAD /home/miku/toolchain/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crti.o
 LOAD /home/miku/toolchain/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
 LOAD /home/miku/toolchain/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+LOAD CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj
 LOAD CMakeFiles/Example.elf.dir/Core/Src/74HC595.c.obj
 LOAD CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj
 LOAD CMakeFiles/Example.elf.dir/Core/Src/dalay.c.obj
 LOAD CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj
+LOAD CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj
 LOAD CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.obj
 LOAD CMakeFiles/Example.elf.dir/Core/Src/main.c.obj
 LOAD CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj

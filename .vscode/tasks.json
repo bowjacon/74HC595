@@ -20,14 +20,14 @@
       "label": "configure make",
       "command": "make",
       "options": {
-        "cwd": "${workspaceFolder}/build"
+        "cwd": "${workspaceFolder}/build",
+        "statusbar": {
+          "label": "build" // 配套 Tasks 插件，可以在状态栏显示任务标签按钮
+        }
       },
-      "args": [
-        "-j",
-        "12"
-      ],
-            "group": {
-        "kind": "build",
+      "args": ["-j", "12"],
+      "group": {
+        "kind": "build"
         // "isDefault": true
       }
     },
@@ -40,12 +40,14 @@
         "interface/stlink.cfg",
         "-f",
         "target/stm32f1x.cfg",
-        "-c",
-        "gdb_port disabled",
+        // "-c",
+        // "gdb_port disabled",
         "-c",
         "tcl_port disabled",
         // "-c",
         // "program ./build/Example.elf verify ",
+        // "-c",
+        // "load_image ./build/Example.elf",
         // "flash write_image ./build/Example.elf ",
         // "load_image ./build/Example.elf ",
         // "-c",
@@ -56,10 +58,10 @@
       //先运行configure cmake
       // "dependsOn": "configure make",
       "group": {
-        "kind": "build",
+        "kind": "build"
         // "isDefault": true
       },
-      "problemMatcher": [],
+      "problemMatcher": []
       // "group": {
       //   "kind": "build",
       //   "isDefault": true
@@ -69,16 +71,13 @@
     //   "label": "Telnet",
     //   "type": "shell",
     //   "command": "telnet",
-    //   "args": [
-    //     "localhost",
-    //     "4444",
-    //   ],
+    //   "args": ["localhost", "4444"],
     //   //先运行configure cmake
     //   "dependsOn": "OpenOCD",
     //   // "problemMatcher": [],
     //   "group": {
-    //     "kind": "build",
-    //     "isDefault": true
+    //     "kind": "build"
+    //     // "isDefault": true
     //   }
     // }
   ],
