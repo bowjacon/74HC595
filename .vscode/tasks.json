@@ -18,7 +18,7 @@
     {
       "type": "shell",
       "label": "configure make",
-      "command": "make",
+      "command": "ninja",
       "options": {
         "cwd": "${workspaceFolder}/build",
         "statusbar": {
@@ -37,23 +37,25 @@
       "command": "openocd",
       "args": [
         "-f",
-        "interface/stlink.cfg",
-        "-f",
-        "target/stm32f1x.cfg",
-        // "-c",
-        // "gdb_port disabled",
+        "./project.cfg",
+        // "interface/cmsis-dap.cfg",
+        // "-f",
+        // "target/stm32f1x.cfg",
+        "-c",
+        "gdb_port disabled",
         "-c",
         "tcl_port disabled",
         // "-c",
-        // "program ./build/Example.elf verify ",
-        // "-c",
+        // "program ./build/Example.elf verify ",......
+        "-c",
+        "program ./build/Example.elf",
         // "load_image ./build/Example.elf",
         // "flash write_image ./build/Example.elf ",
         // "load_image ./build/Example.elf ",
-        // "-c",
-        // "reset",
-        // "-c",
-        // "shutdown"
+        "-c",
+        "reset",
+        "-c",
+        "shutdown"
       ],
       //先运行configure cmake
       // "dependsOn": "configure make",

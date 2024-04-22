@@ -16,7 +16,8 @@
             "servertype": "openocd",
             "svdFile": "stm32f103.svd",
             "configFiles": [
-                "interface/stlink.cfg",
+                // "interface/stlink.cfg",
+                "interface/cmsis-dap.cfg",
                 "target/stm32f1x.cfg"
             ],
         }

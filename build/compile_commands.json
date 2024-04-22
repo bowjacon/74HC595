@@ -1,177 +1,177 @@
 [
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/MPU6050/MPU6050.c",
-  "file": "/home/miku/disk/lcd1602/74HC595/Core/MPU6050/MPU6050.c"
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/I2C/i2c.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/I2C/i2c.c",
+  "file": "/home/miku/disk/lcd1602/74HC595/Core/I2C/i2c.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/74HC595.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/74HC595.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/74HC595.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/74HC595.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Core/Src/74HC595.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/Timer.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/Timer.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/Timer.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Core/Src/Timer.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/dalay.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/dalay.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/dalay.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/dalay.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Core/Src/dalay.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/gpio.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/gpio.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/gpio.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Core/Src/gpio.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/i2c.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/i2c.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Core/Src/i2c.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/lcd1602.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/lcd1602.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Core/Src/lcd1602.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/main.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/main.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/main.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/main.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Core/Src/main.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/stm32f10x_it.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/stm32f10x_it.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/stm32f10x_it.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Core/Src/stm32f10x_it.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -o CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj -c /home/miku/disk/lcd1602/74HC595/Core/Startup/startup_stm32f10x_md.s",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -o CMakeFiles/Example.elf.dir/Core/Startup/startup_stm32f10x_md.s.obj -c /home/miku/disk/lcd1602/74HC595/Core/Startup/startup_stm32f10x_md.s",
   "file": "/home/miku/disk/lcd1602/74HC595/Core/Startup/startup_stm32f10x_md.s"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/core_cm3.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/core_cm3.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/core_cm3.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/core_cm3.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/core_cm3.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/misc.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/misc.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/misc.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/misc.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_adc.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_adc.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_adc.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_adc.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_adc.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_bkp.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_bkp.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_bkp.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_bkp.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_bkp.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_can.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_can.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_can.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_can.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_can.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_cec.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_cec.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_cec.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_cec.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_cec.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_crc.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_crc.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_crc.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_crc.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_crc.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_dac.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_dac.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_dac.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_dac.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_dac.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_dbgmcu.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_dbgmcu.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_dbgmcu.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_dbgmcu.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_dbgmcu.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_dma.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_dma.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_dma.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_dma.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_dma.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_exti.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_exti.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_exti.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_exti.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_flash.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_flash.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_flash.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_flash.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_flash.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_fsmc.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_fsmc.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_fsmc.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_fsmc.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_fsmc.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_gpio.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_gpio.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_gpio.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_gpio.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_i2c.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_i2c.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_i2c.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_i2c.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_i2c.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_iwdg.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_iwdg.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_iwdg.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_iwdg.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_iwdg.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_pwr.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_pwr.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_pwr.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_pwr.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_pwr.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_rcc.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rcc.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_rcc.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_rcc.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rtc.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_rtc.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_rtc.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_rtc.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_rtc.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_sdio.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_sdio.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_sdio.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_sdio.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_sdio.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_spi.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_spi.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_spi.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_spi.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_spi.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_tim.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_tim.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_tim.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_tim.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_usart.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_usart.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_usart.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_usart.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_usart.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_wwdg.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_wwdg.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/stm32f10x_wwdg.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_wwdg.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/stm32f10x_wwdg.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DVECT_TAB_SRAM -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/system_stm32f10x.c",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Drivers/Src/system_stm32f10x.c.obj -c /home/miku/disk/lcd1602/74HC595/Drivers/Src/system_stm32f10x.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Drivers/Src/system_stm32f10x.c"
 }
 ]
