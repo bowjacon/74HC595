@@ -132,3 +132,19 @@ void LCD_DisplayString(uint8_t x, uint8_t y, char *str) {
     LCD_WriteData(*str++);
   }
 }
+/*
+ * @description:显示16进制数
+ */
+void LCD_ShowNum_16(uint8_t x, uint8_t y, int num) {
+  LCD_SetCursor(x, y);
+  LCD_WriteData('0');
+  LCD_WriteData('x');
+  for (int i = 28; i >= 0; i -= 4) {
+    int temp = (num >> i) & 0x0F;
+    if (temp < 10) {
+      LCD_WriteData(temp + '0');
+    } else {
+      LCD_WriteData(temp - 10 + 'A');
+    }
+  }
+}

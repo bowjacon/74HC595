@@ -58,10 +58,10 @@
         "shutdown"
       ],
       //先运行configure cmake
-      // "dependsOn": "configure make",
+      "dependsOn": "configure make",
       "group": {
-        "kind": "build"
-        // "isDefault": true
+        "kind": "build",
+        "isDefault": true,
       },
       "problemMatcher": []
       // "group": {

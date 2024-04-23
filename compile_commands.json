@@ -6,8 +6,8 @@
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Core/I2C -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -I/home/miku/disk/lcd1602/74HC595/Core/MPU6050 -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/MPU6050/MPU6050.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/MPU6050/MPU6050.c",
-  "file": "/home/miku/disk/lcd1602/74HC595/Core/MPU6050/MPU6050.c"
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Core/I2C -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -I/home/miku/disk/lcd1602/74HC595/Core/MPU6050 -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/MPU6050/mpu6050.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/MPU6050/mpu6050.c",
+  "file": "/home/miku/disk/lcd1602/74HC595/Core/MPU6050/mpu6050.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
@@ -31,11 +31,6 @@
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
-  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Core/I2C -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -I/home/miku/disk/lcd1602/74HC595/Core/MPU6050 -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/i2c.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/i2c.c",
-  "file": "/home/miku/disk/lcd1602/74HC595/Core/Src/i2c.c"
-},
-{
-  "directory": "/home/miku/disk/lcd1602/74HC595/build",
   "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Core/I2C -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -I/home/miku/disk/lcd1602/74HC595/Core/MPU6050 -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/lcd1602.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/lcd1602.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Core/Src/lcd1602.c"
 },
@@ -43,6 +38,11 @@
   "directory": "/home/miku/disk/lcd1602/74HC595/build",
   "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Core/I2C -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -I/home/miku/disk/lcd1602/74HC595/Core/MPU6050 -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/main.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/main.c",
   "file": "/home/miku/disk/lcd1602/74HC595/Core/Src/main.c"
+},
+{
+  "directory": "/home/miku/disk/lcd1602/74HC595/build",
+  "command": "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc -DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -I/home/miku/disk/lcd1602/74HC595/Core/Inc -I/home/miku/disk/lcd1602/74HC595/Core/I2C -I/home/miku/disk/lcd1602/74HC595/Drivers/Inc -I/home/miku/disk/lcd1602/74HC595/Core/MPU6050 -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Ofast -mfloat-abi=soft -std=gnu11 -o CMakeFiles/Example.elf.dir/Core/Src/origin_i2c.c.obj -c /home/miku/disk/lcd1602/74HC595/Core/Src/origin_i2c.c",
+  "file": "/home/miku/disk/lcd1602/74HC595/Core/Src/origin_i2c.c"
 },
 {
   "directory": "/home/miku/disk/lcd1602/74HC595/build",

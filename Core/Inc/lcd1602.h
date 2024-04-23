@@ -55,4 +55,5 @@ void LCD_Init(void);
 void LCD_DisplayString(uint8_t x, uint8_t y, char *str);
 void LCD_WriteData(uint8_t data);
 void LCD_WriteCommand(uint8_t command);
+void LCD_ShowNum_16(uint8_t x, uint8_t y, int num);
 #endif
