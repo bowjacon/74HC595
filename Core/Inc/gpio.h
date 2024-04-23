@@ -26,7 +26,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-18 15:17:21
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-21 15:15:57
+ * @LastEditTime: 2024-04-23 22:32:02
  * @FilePath: /74HC595/Core/Inc/gpio.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -87,5 +87,7 @@
 // #define RS(x) GPIO_WriteBit(GPIOB, LCD_RS, x)
 // #define EN(x) GPIO_WriteBit(GPIOB, LCD_EN, x)
 void My_GPIO_Init(void);
-
+#define I2C_PORT GPIOA
+#define I2C_SCL_Pin GPIO_Pin_1
+#define I2C_SDA_Pin GPIO_Pin_0
 #endif
