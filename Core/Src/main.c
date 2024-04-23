@@ -48,21 +48,10 @@
 int main(void) {
     My_GPIO_Init();
     LCD_Init();
-    LCD_DisplayString(3, 2, "world");
-    // LCD_WriteCommand(0x80);
-    // LCD_DisplayString(0,1,"NI HAO");
     MPU6050_Init();
-    uint8_t id;
+    uint8_t id=0;
     M_I2C_ReiciveByte_Data(MPU6050_WHO_AM_I, &id, 1);
     LCD_ShowNum_16(0, 1, id);
     while (1) {
-        // for (char  i = 0; i <= 26; i++) {
-        //   LCD_DisplayString(0, 2,"a"+i);
-        //   Delay_ms(500);
-        // }
-        // LCD_DisplayString(0, 1, "NI HAO");
-        // Delay_ms(500);
-        // LCD_DisplayString(0, 1, "HELLO");
-        // Delay_ms(500);
     }
 }

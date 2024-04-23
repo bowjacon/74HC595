@@ -11,7 +11,6 @@
 #include <stdint.h>
 
 void MPU6050_Init(void) {
-    
     M_I2C_Init();
     M_I2C_Transmit_Data(MPU6050_PWR_MGMT_1, command1, 2);
     M_I2C_Transmit_Data(MPU6050_SMPLRT_DIV, command2, 4);
