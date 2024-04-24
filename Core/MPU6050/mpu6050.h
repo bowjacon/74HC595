@@ -27,8 +27,6 @@
                (MPU6050_GYRO_CONFIG_Data >> 4 && 0x01)) *                      \
         250
 
-static const uint8_t command1[] = {MPU6050_PWR_MGMT_1_Data, MPU6050_PWR_MGMT_2_Data};
-static const uint8_t command2[] = {MPU6050_SMPLRT_DIV_Data, MPU6050_CONFIG_Data,
-                      MPU6050_GYRO_CONFIG_Data, MPU6050_ACCEL_CONFIG_Data};
+
 void MPU6050_Init(void);
 #endif

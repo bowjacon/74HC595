@@ -34,10 +34,13 @@
  */
 #ifndef I2C_H
 #define I2C_H
+#include "delay.h"
 #include "gpio.h"
+#include "i2c.h"
+#include <stdint.h>
 
 #define MPU6050_ADDRESS 0xD0
-#define SCL_DELAY 4
+#define SCL_DELAY 100
 #define Write_Mode 0
 #define Read_Mode 1
 typedef enum {
@@ -65,10 +68,7 @@ typedef enum {
 void M_I2C_Init(void);
 void M_I2C_Transmit(const uint8_t* data, uint8_t n);
 
-/*
- * 读取引脚
- */
-#define Read_SDA() GPIO_ReadInputDataBit(I2C_PORT, I2C_SDA_Pin)
+
 
 /*
  * 改变SDA为输出模式
@@ -94,5 +94,5 @@ void M_I2C_Transmit(const uint8_t* data, uint8_t n);
         }                                           \
     } while (0)
 void M_I2C_Transmit_Data(uint8_t reg_adress, const uint8_t* data, uint8_t n);
-void M_I2C_ReiciveByte_Data(uint8_t reg_adress, uint8_t* data, uint8_t n);
+void M_I2C_ReiciveByte_Data(uint8_t reg_adress, uint8_t* data,uint8_t n);
 #endif

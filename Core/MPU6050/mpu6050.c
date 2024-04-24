@@ -9,7 +9,9 @@
  */
 #include "mpu6050.h"
 #include <stdint.h>
-
+static const uint8_t command1[] = {MPU6050_PWR_MGMT_1_Data, MPU6050_PWR_MGMT_2_Data};
+static const uint8_t command2[] = {MPU6050_SMPLRT_DIV_Data, MPU6050_CONFIG_Data,
+                      MPU6050_GYRO_CONFIG_Data, MPU6050_ACCEL_CONFIG_Data};
 // M_I2C_Transmit_Data(MPU6050_PWR_MGMT_1,0x01);//解除睡眠模式,选择陀螺仪时钟
 // M_I2C_Transmit_Data(MPU6050_PWR_MGMT_2,0x00);//6轴均不待机
 // M_I2C_Transmit_Data(MPU6050_SMPLRT_DIV,0x09);//10分频;
