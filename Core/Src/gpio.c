@@ -26,7 +26,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-18 15:17:21
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-23 22:31:46
+ * @LastEditTime: 2024-04-24 11:51:23
  * @FilePath: /74HC595/Core/Src/gpio.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -56,5 +56,6 @@ void My_GPIO_Init(void) {
     GPIO_InitStructure.GPIO_Pin = LCD_RS_PIN | LCD_EN_PIN;
     GPIO_Init(LCD_SIGNAL_PORT, &GPIO_InitStructure);
     GPIO_InitStructure.GPIO_Pin = I2C_SCL_Pin | I2C_SDA_Pin;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
     GPIO_Init(I2C_PORT, &GPIO_InitStructure);
 }
