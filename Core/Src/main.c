@@ -46,11 +46,12 @@
 #include "lcd1602.h"
 #include <stdint.h>
 
-int main(void) {
+int main(void)
+{
     My_GPIO_Init();
     LCD_Init();
     MPU6050_Init();
-    uint8_t id=0;
+    uint8_t id = 0;
     M_I2C_ReiciveByte_Data(MPU6050_WHO_AM_I, &id, 1);
     LCD_DisplayString(0, 1, "id:");
     LCD_ShowNum_16(3, 1, id);

@@ -44,7 +44,8 @@
 #include "gpio.h"
 #include "stm32f10x_gpio.h"
 
-void My_GPIO_Init(void) {
+void My_GPIO_Init(void)
+{
     // Configure LCD data pins as output
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
@@ -55,7 +56,8 @@ void My_GPIO_Init(void) {
     GPIO_Init(HC_PORT, &GPIO_InitStructure);
     GPIO_InitStructure.GPIO_Pin = LCD_RS_PIN | LCD_EN_PIN;
     GPIO_Init(LCD_SIGNAL_PORT, &GPIO_InitStructure);
-    GPIO_InitStructure.GPIO_Pin = I2C_SCL_Pin | I2C_SDA_Pin;
+    GPIO_InitStructure.GPIO_Pin = I2C_SCL_Pin | I2C_SDA_Pin ;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
     GPIO_Init(I2C_PORT, &GPIO_InitStructure);
+    GPIO_SetBits(GPIOA, I2C_SCL_Pin | I2C_SCL_Pin);
 }

@@ -7,13 +7,15 @@ set(CMAKE_SYSTEM_VERSION 1)
 # 设置构建项目所支持的最低CMake版本
 cmake_minimum_required(VERSION 3.13)
 find_program(CCACHE_PROGRAM ccache)
+
 if(CCACHE_PROGRAM)
     set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
     set(CMAKE_CUDA_COMPILER_LAUNCHER "${CCACHE_PROGRAM}") # CMake 3.9+
 endif()
+
 set(CMAKE_C_COMPILER arm-none-eabi-gcc)
 set(CMAKE_CXX_COMPILER arm-none-eabi-g++)
-set(CMAKE_ASM_COMPILER  arm-none-eabi-gcc)
+set(CMAKE_ASM_COMPILER arm-none-eabi-gcc)
 set(CMAKE_AR arm-none-eabi-ar)
 
 # 设置CMake的二进制文件复制工具和反汇编工具
@@ -35,7 +37,7 @@ set(CMAKE_C_STANDARD 11)
 
 # 指定了目标处理器为 ARM Cortex-M3
 # 启用了 Thumb 指令集和 Thumb 与 ARM 指令集之间的互操作
-add_compile_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork)  # NOLINT
+add_compile_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork) # NOLINT
 
 # -ffunction-sections 和 -fdata-sections 将函数和数据分别放入它们自己的节（section）
 # -fno-common 防止生成公共符号netstat -tlnp | grep
@@ -49,8 +51,8 @@ add_compile_options(-Ofast)
 include_directories(Core/Inc Core/I2C Drivers/Inc Core/MPU6050)
 
 # 预定义宏
-add_definitions(-DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER 
-# -DVECT_TAB_SRAM
+add_definitions(-DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
+    # -DVECT_TAB_SRAM
 )
 
 # 获取项目的所有源文件
@@ -64,6 +66,7 @@ set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F103C6TX_FLASH.ld)
 # add_compile_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
 # add_link_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
 add_compile_options(-mfloat-abi=soft)
+
 # -Wl 用来传递选项给链接器的。
 # -gc-sections 告诉链接器丢弃未使用的代码和数据段，帮助减小生成的二进制文件的大小。
 # --print-memory-usage 让链接器在链接完成后打印内存使用情况，这可以帮助我们了解程序使用了多少 RAM 和 Flash。
@@ -82,12 +85,13 @@ add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
 # # 设置二进制文件的输出路径
 # set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
 # # set(BIN_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin)
-# if(GCC_VERSION VERSION_GREATER 12.2 OR GCC_VERSION VERSION_EQUAL 12.2)
-#     add_link_options(-Wl,--no-warn-rwx-segments)
-# endif()
+if(GCC_VERSION VERSION_GREATER 12.2 OR GCC_VERSION VERSION_EQUAL 12.2)
+    add_link_options(-Wl,--no-warn-rwx-segments)
+endif()
+
 # # 生成二进制文件
 # add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
-#         COMMAND ${CMAKE_OBJCOPY} -Oihex $<TARGET_FILE:${PROJECT_NAME}.elf> ${HEX_FILE}
-#         # COMMAND ${CMAKE_OBJCOPY} -Obinary $<TARGET_FILE:${PROJECT_NAME}.elf> ${BIN_FILE}
-#         COMMENT "Building ${HEX_FILE}")
+# COMMAND ${CMAKE_OBJCOPY} -Oihex $<TARGET_FILE:${PROJECT_NAME}.elf> ${HEX_FILE}
+# # COMMAND ${CMAKE_OBJCOPY} -Obinary $<TARGET_FILE:${PROJECT_NAME}.elf> ${BIN_FILE}
+# COMMENT "Building ${HEX_FILE}")
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fdiagnostics-color=always")

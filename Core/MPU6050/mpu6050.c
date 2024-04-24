@@ -16,19 +16,20 @@
 // M_I2C_Transmit_Data(MPU6050_CONFIG,0x06);//有滤波
 // M_I2C_Transmit_Data(MPU6050_GYRO_CONFIG,0x18);
 // M_I2C_Transmit_Data(MPU6050_ACCCEL_CONFIG,0x18);
-void MPU6050_Init(void) {
+void MPU6050_Init(void)
+{
 
     // M_I2C_Init();
-    // M_I2C_Transmit_Data(MPU6050_PWR_MGMT_1, command1, 2);
-    // M_I2C_Transmit_Data(MPU6050_SMPLRT_DIV, command2, 4);
+    M_I2C_Transmit_Data(MPU6050_PWR_MGMT_1, command1, 2);
+    M_I2C_Transmit_Data(MPU6050_SMPLRT_DIV, command2, 4);
 
-    M_I2C_Transmit_Data(MPU6050_PWR_MGMT_1, (uint8_t *)0x01,
-                        1); //解除睡眠模式,选择陀螺仪时钟
-    M_I2C_Transmit_Data(MPU6050_PWR_MGMT_2, (uint8_t *)0x00, 1); // 6轴均不待机
-    M_I2C_Transmit_Data(MPU6050_SMPLRT_DIV, (uint8_t *)0x09, 1); // 10分频;
-    M_I2C_Transmit_Data(MPU6050_CONFIG, (uint8_t *)0x06, 1);     //有滤波
-    M_I2C_Transmit_Data(MPU6050_GYRO_CONFIG, (uint8_t *)0x18, 1);
-    M_I2C_Transmit_Data(MPU6050_ACCCEL_CONFIG, (uint8_t *)0x18, 1);
+    // M_I2C_Transmit_Data(MPU6050_PWR_MGMT_1, (uint8_t *)0x01,
+    //                     1); //解除睡眠模式,选择陀螺仪时钟
+    // M_I2C_Transmit_Data(MPU6050_PWR_MGMT_2, (uint8_t *)0x00, 1); // 6轴均不待机
+    // M_I2C_Transmit_Data(MPU6050_SMPLRT_DIV, (uint8_t *)0x09, 1); // 10分频;
+    // M_I2C_Transmit_Data(MPU6050_CONFIG, (uint8_t *)0x06, 1);     //有滤波
+    // M_I2C_Transmit_Data(MPU6050_GYRO_CONFIG, (uint8_t *)0x18, 1);
+    // M_I2C_Transmit_Data(MPU6050_ACCCEL_CONFIG, (uint8_t *)0x18, 1);
 }
 
 // uint8_t MPU6050_GetID(uint8_t *data) { return

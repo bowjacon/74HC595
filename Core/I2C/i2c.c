@@ -40,55 +40,65 @@
 /*
  * 开始信号
  */
-static void M_I2C_Start(void) {
+static void M_I2C_Start(void)
+{
     I2C_SDA(1);
     I2C_SCL(1);
-    Delay_us(SCL_DELAY);
+    // Delay_us(SCL_DELAY);
     I2C_SDA(0);
+    I2C_SCL(0);
 }
 
 /*
  * 结束信号
  */
-static void M_I2C_Stop(void) {
+static void M_I2C_Stop(void)
+{
+    I2C_SCL(0);
     I2C_SDA(0);
     I2C_SCL(1);
-    Delay_us(SCL_DELAY);
+    // Delay_us(SCL_DELAY);
     I2C_SDA(1);
-
 }
 /*
  * 应答信号：SCL最低需要保持0.6us
  */
-static void M_I2C_Ack(void) {
+static void M_I2C_Ack(void)
+{
+    I2C_SCL(0);
+    // I2C_SDA(1);
     I2C_SCL(1);
-    Delay_us(SCL_DELAY);
+    // Delay_us(SCL_DELAY);
     I2C_SCL(0);
 }
 /*
  * 非应答信号，由主机发送
  */
-static void M_I2C_NAck(void) {
+static void M_I2C_NAck(void)
+{
+    I2C_SCL(0);
     I2C_SDA(1);
     I2C_SCL(1);
-    Delay_us(SCL_DELAY);
+    // Delay_us(SCL_DELAY);
     I2C_SCL(0);
 }
 /*
  * 发送一个字节数据
  */
-void M_I2C_Transmit_Byte(uint8_t byte) {
+void M_I2C_Transmit_Byte(uint8_t byte)
+{
     for (uint8_t j = 0; j < 8; j++) {
-        I2C_SDA((byte & (0x80 >> j)) ? 1 : 0);
-        Delay_us(SCL_DELAY);
-        I2C_SCL(1);
-        Delay_us(SCL_DELAY);
         I2C_SCL(0);
-        Delay_us(SCL_DELAY);
-        //释放总线
-        if (j == 7) {
-            I2C_SDA(1);
-        }
+        I2C_SDA((byte & (0x80 >> j)));
+        // Delay_us(SCL_DELAY);
+        I2C_SCL(1);
+        // Delay_us(SCL_DELAY);
+        I2C_SCL(0);
+        // Delay_us(SCL_DELAY);
+        // 释放总线
+        // if (j == 7) {
+        //     I2C_SDA(1);
+        // }
     }
     M_I2C_Ack();
 }
@@ -96,7 +106,8 @@ void M_I2C_Transmit_Byte(uint8_t byte) {
 /*
  * 发送n个数据(中间层)
  */
-void M_I2C_Transmit(const uint8_t *data, uint8_t n) {
+void M_I2C_Transmit(const uint8_t* data, uint8_t n)
+{
     for (uint8_t i = 0; i < n; i++) {
         M_I2C_Transmit_Byte(data[i]);
     }
@@ -105,14 +116,19 @@ void M_I2C_Transmit(const uint8_t *data, uint8_t n) {
 /*
  * 接收一个字节数据
  */
-void M_I2C_Receive_Byte(uint8_t *data) {
+void M_I2C_Receive_Byte(uint8_t* data)
+{
     uint8_t byte = 0;
     for (uint8_t j = 0; j < 8; j++) {
+        // I2C_SCL(0);
         I2C_SCL(1);
-        Delay_us(SCL_DELAY);
-        byte |= Read_SDA() ? (0x80 >> j) : 0;
+        // Delay_us(SCL_DELAY);
+        // byte |= Read_SDA() ? (0x80 >> j) : 0;
+        if (Read_SDA()) {
+            byte |= (0x80 >> j);
+        }
         I2C_SCL(0);
-        Delay_us(SCL_DELAY);
+        // Delay_us(SCL_DELAY);
     }
     *data = byte;
 }
@@ -120,7 +136,8 @@ void M_I2C_Receive_Byte(uint8_t *data) {
 /*
  * 接受n个数据(中间层)
  */
-void M_I2C_Reicive(uint8_t reg_adress, uint8_t *data, uint8_t n) {
+void M_I2C_Reicive(uint8_t reg_adress, uint8_t* data, uint8_t n)
+{
     for (uint8_t i = 0; i < n; i++) {
         M_I2C_Receive_Byte(&data[i]);
         if (i != n - 1) {
@@ -132,11 +149,12 @@ void M_I2C_Reicive(uint8_t reg_adress, uint8_t *data, uint8_t n) {
 /*
  * 写入指定个数数据
  */
-void M_I2C_Transmit_Data(uint8_t reg_adress, const uint8_t *data, uint8_t n) {
+void M_I2C_Transmit_Data(uint8_t reg_adress, const uint8_t* data, uint8_t n)
+{
     M_I2C_Start();
     uint8_t length = 2 + n;
     uint8_t send_packet[length];
-    uint8_t adress[2] = {MPU6050_ADDRESS | Write_Mode, reg_adress};
+    uint8_t adress[2] = { MPU6050_ADDRESS | Write_Mode, reg_adress };
     Connect_Array(send_packet, adress, 2, data, n);
     M_I2C_Transmit(send_packet, length);
     M_I2C_Stop();
@@ -145,9 +163,10 @@ void M_I2C_Transmit_Data(uint8_t reg_adress, const uint8_t *data, uint8_t n) {
 /*
  * 读取指定个数数据
  */
-void M_I2C_ReiciveByte_Data(uint8_t reg_adress, uint8_t *data, uint8_t n) {
+void M_I2C_ReiciveByte_Data(uint8_t reg_adress, uint8_t* data, uint8_t n)
+{
     M_I2C_Start();
-    uint8_t adress[2] = {MPU6050_ADDRESS | Read_Mode, reg_adress};
+    uint8_t adress[2] = { MPU6050_ADDRESS | Read_Mode, reg_adress };
     M_I2C_Transmit(adress, 2);
     M_I2C_Reicive(reg_adress, data, n);
     M_I2C_Stop();
