@@ -2,7 +2,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-21 20:22:48
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-24 19:57:08
+ * @LastEditTime: 2024-04-24 20:05:45
  * @FilePath: /74HC595/Core/I2C/i2c.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -50,6 +50,39 @@ void M_I2C_Transmit(const uint8_t *data, uint8_t n);
  * 读取引脚
  */
 #define Read_SDA() GPIO_ReadInputDataBit(I2C_PORT, I2C_SDA_Pin)
+
+/**
+ * @brief
+ * 开始信号
+ */
+#define M_I2C_Start()                                                          \
+    do {                                                                       \
+        I2C_SDA(1);                                                            \
+        I2C_SCL(1);                                                            \
+        I2C_SDA(0);                                                            \
+    } while (0)
+
+/**
+ * @brief 停止信号
+ */
+
+#define M_I2C_Stop()                                                           \
+    do {                                                                       \
+        I2C_SDA(0);                                                            \
+        I2C_SCL(1);                                                            \
+        I2C_SDA(1);                                                            \
+    } while (0)
+
+/**
+ * @brief 脉冲信号
+ *
+ */
+#define M_I2C_Clock()                                                          \
+    do {                                                                       \
+        I2C_SCL(0);                                                            \
+        I2C_SCL(1);                                                            \
+        I2C_SCL(0);                                                            \
+    } while (0)
 
 void M_I2C_Transmit_Data(uint8_t reg_adress, const uint8_t *data, uint8_t n);
 void M_I2C_Reicive_Byte(uint8_t reg_adress, uint8_t *data);

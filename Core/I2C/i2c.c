@@ -2,7 +2,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-21 20:22:42
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-24 20:03:57
+ * @LastEditTime: 2024-04-24 20:05:36
  * @FilePath: /74HC595/Core/I2C/i2c.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -26,34 +26,8 @@
 #include <stdint.h>
 #include <string.h>
 
-/**
- * @brief
- * 开始信号
- */
-void M_I2C_Start(void) {
-    I2C_SDA(1);
-    I2C_SCL(1);
-    I2C_SDA(0);
-}
 
-/**
- * @brief 停止信号
- */
 
-void M_I2C_Stop(void) {
-    I2C_SDA(0);
-    I2C_SCL(1);
-    I2C_SDA(1);
-}
-/**
- * @brief 脉冲信号
- *
- */
-void M_I2C_Clock(void) {
-    I2C_SCL(0);
-    I2C_SCL(1);
-    I2C_SCL(0);
-}
 /**
  * 发送数据
  */
@@ -104,7 +78,7 @@ void M_I2C_Transmit_Data(uint8_t reg_adress, const uint8_t *data, uint8_t n) {
     M_I2C_Start();
     M_I2C_Transmit_Byte(MPU6050_ADDRESS);
     M_I2C_Transmit_Byte(reg_adress);
-    for (uint8_t i = 0; i <  n; i++) {
+    for (uint8_t i = 0; i < n; i++) {
         M_I2C_Transmit_Byte(data[i]);
     }
     M_I2C_Stop();
