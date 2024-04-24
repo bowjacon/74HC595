@@ -2,7 +2,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-22 21:54:24
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-22 21:54:25
+ * @LastEditTime: 2024-04-24 12:19:44
  * @FilePath: /74HC595/Core/MPU6050/mpu6050_reg.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -13,7 +13,7 @@
 #define	MPU6050_CONFIG			0x1A
 #define	MPU6050_GYRO_CONFIG		0x1B
 #define	MPU6050_ACCEL_CONFIG	0x1C
-
+#define MPU6050_ACCCEL_CONFIG 0X1C
 #define	MPU6050_ACCEL_XOUT_H	0x3B
 #define	MPU6050_ACCEL_XOUT_L	0x3C
 #define	MPU6050_ACCEL_YOUT_H	0x3D
