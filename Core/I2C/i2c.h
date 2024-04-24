@@ -2,7 +2,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-21 20:22:48
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-24 19:44:10
+ * @LastEditTime: 2024-04-24 19:57:08
  * @FilePath: /74HC595/Core/I2C/i2c.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -37,7 +37,6 @@
 #include "gpio.h"
 
 #define MPU6050_ADDRESS 0xD0
-#define SCL_DELAY 4
 #define Write_Mode 0
 #define Read_Mode 1
 
@@ -52,18 +51,6 @@ void M_I2C_Transmit(const uint8_t *data, uint8_t n);
  */
 #define Read_SDA() GPIO_ReadInputDataBit(I2C_PORT, I2C_SDA_Pin)
 
-/*
- * 拼接数组
- */
-#define Connect_Array(dest, src1, len1, src2, len2)                            \
-    do {                                                                       \
-        for (int i = 0; i < (len1); i++) {                                     \
-            (dest)[i] = (src1)[i];                                             \
-        }                                                                      \
-        for (int i = 0; i < (len2); i++) {                                     \
-            (dest)[(len1) + i] = (src2)[i];                                    \
-        }                                                                      \
-    } while (0)
 void M_I2C_Transmit_Data(uint8_t reg_adress, const uint8_t *data, uint8_t n);
-void M_I2C_ReiciveByte_Data(uint8_t reg_adress, uint8_t *data, uint8_t n);
+void M_I2C_Reicive_Byte(uint8_t reg_adress, uint8_t *data);
 #endif

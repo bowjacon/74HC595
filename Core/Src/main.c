@@ -26,7 +26,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-18 15:17:21
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-24 12:13:18
+ * @LastEditTime: 2024-04-24 19:57:48
  * @FilePath: /74HC595/Core/Src/main.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -51,7 +51,7 @@ int main(void) {
     LCD_Init();
     MPU6050_Init();
     uint8_t id=0;
-    M_I2C_ReiciveByte_Data(MPU6050_WHO_AM_I, &id, 1);
+    M_I2C_Reicive_Byte(MPU6050_WHO_AM_I, &id);
     LCD_DisplayString(0, 1, "id:");
     LCD_ShowNum_16(3, 1, id);
     while (1) {

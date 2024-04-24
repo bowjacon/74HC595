@@ -2,7 +2,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-21 20:22:42
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-24 19:43:39
+ * @LastEditTime: 2024-04-24 20:03:57
  * @FilePath: /74HC595/Core/I2C/i2c.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -55,7 +55,7 @@ void M_I2C_Clock(void) {
     I2C_SCL(0);
 }
 /**
- * 发送一个字节数据
+ * 发送数据
  */
 void M_I2C_Transmit_Byte(uint8_t byte) {
     I2C_SCL(0);
@@ -64,69 +64,48 @@ void M_I2C_Transmit_Byte(uint8_t byte) {
         I2C_SCL(1);
         I2C_SCL(0);
     }
+    M_I2C_Clock();
 }
 
 /**
- * 发送n个数据(中间层)
+ * 接收数据
  */
-void M_I2C_Transmit(const uint8_t *data, uint8_t n) {
-    for (uint8_t i = 0; i < n; i++) {
-        M_I2C_Transmit_Byte(data[i]);
-        M_I2C_Clock();
-    }
-}
-
-/**
- * 接收一个字节数据
- */
-void M_I2C_Receive_Byte(uint8_t *data) {
+void M_I2C_Receive(uint8_t *data) {
     uint8_t byte = 0;
     I2C_SCL(0);
     I2C_SDA(1);
     for (uint8_t j = 0; j < 8; j++) {
         I2C_SCL(1);
-        if (Read_SDA() == 1) {
-            byte |= (0x80 >> j);
-        }
+        byte |= (Read_SDA() << (7 - j));
         I2C_SCL(0);
     }
     *data = byte;
+    M_I2C_Clock();
 }
 
 /**
- * 接受n个数据(中间层)
+ * 接受1个字节
  */
-void M_I2C_Reicive(uint8_t reg_adress, uint8_t *data, uint8_t n) {
-    for (uint8_t i = 0; i < n; i++) {
-        M_I2C_Receive_Byte(&data[i]);
-        M_I2C_Clock();
-        reg_adress++;
-    }
-}
-/**
- * 写入指定个数数据
- */
-void M_I2C_Transmit_Data(uint8_t reg_adress, const uint8_t *data, uint8_t n) {
-    uint8_t length = 2 + n;
-    uint8_t send_packet[length];
-    uint8_t adress[2] = {MPU6050_ADDRESS, reg_adress};
+void M_I2C_Reicive_Byte(uint8_t reg_adress, uint8_t *data) {
     M_I2C_Start();
-    Connect_Array(send_packet, adress, 2, data, n);
-    M_I2C_Transmit(send_packet, length);
+    M_I2C_Transmit_Byte(MPU6050_ADDRESS);
+    M_I2C_Transmit_Byte(reg_adress);
+    M_I2C_Start();
+    M_I2C_Transmit_Byte(MPU6050_ADDRESS | Read_Mode);
+    M_I2C_Receive(data);
     M_I2C_Stop();
 }
 
 /**
- * 读取指定个数数据
+ * 写入指定个数数据
  */
-void M_I2C_ReiciveByte_Data(uint8_t reg_adress, uint8_t *data, uint8_t n) {
+void M_I2C_Transmit_Data(uint8_t reg_adress, const uint8_t *data, uint8_t n) {
+    uint8_t send_packet[2 + n];
     M_I2C_Start();
-    uint8_t adress[2] = {MPU6050_ADDRESS, reg_adress};
-    M_I2C_Transmit(adress, 2);
-    M_I2C_Start();
-    uint8_t send_data[] = {MPU6050_ADDRESS | Read_Mode};
-    M_I2C_Transmit(send_data, 1);
-    M_I2C_Reicive(reg_adress, data, n);
-    M_I2C_Clock();
+    M_I2C_Transmit_Byte(MPU6050_ADDRESS);
+    M_I2C_Transmit_Byte(reg_adress);
+    for (uint8_t i = 0; i <  n; i++) {
+        M_I2C_Transmit_Byte(data[i]);
+    }
     M_I2C_Stop();
 }
