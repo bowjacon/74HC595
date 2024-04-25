@@ -2,7 +2,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-22 21:06:07
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-24 21:20:45
+ * @LastEditTime: 2024-04-25 15:58:01
  * @FilePath: /74HC595/Core/MPU6050/mpu6050.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -27,9 +27,12 @@
                (MPU6050_GYRO_CONFIG_Data >> 4 && 0x01)) *                      \
         250
 
-static const uint8_t command1[] = {MPU6050_PWR_MGMT_1_Data, MPU6050_PWR_MGMT_2_Data};
+static const uint8_t command1[] = {MPU6050_PWR_MGMT_1_Data,
+                                   MPU6050_PWR_MGMT_2_Data};
 static const uint8_t command2[] = {MPU6050_SMPLRT_DIV_Data, MPU6050_CONFIG_Data,
-                      MPU6050_GYRO_CONFIG_Data, MPU6050_ACCEL_CONFIG_Data};
- void MPU6050_Init(void);
-void MPU6050_Read_Temperature(double  *temperature);
+                                   MPU6050_GYRO_CONFIG_Data,
+                                   MPU6050_ACCEL_CONFIG_Data};
+void MPU6050_Init(void);
+void MPU6050_Read_Temperature(double *temperature);
+
 #endif

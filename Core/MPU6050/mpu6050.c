@@ -2,7 +2,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-22 21:06:07
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-24 21:19:21
+ * @LastEditTime: 2024-04-25 15:53:21
  * @FilePath: /74HC595/Core/MPU6050/mpu6050.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -21,10 +21,9 @@ void MPU6050_Init(void) {
     M_I2C_Transmit_Data(MPU6050_PWR_MGMT_1, command1, 2);
     M_I2C_Transmit_Data(MPU6050_SMPLRT_DIV, command2, 4);
 }
-void MPU6050_Read_Temperature(double   *temperature) {
+void MPU6050_Read_Temperature(double *temperature) {
     uint8_t data[2];
-    M_I2C_Reicive_Byte(MPU6050_TEMP_OUT_H, &data[0]);
-    M_I2C_Reicive_Byte(MPU6050_TEMP_OUT_L, &data[1]);
+    M_I2C_Read_Data(MPU6050_TEMP_OUT_H, data, 2);
     int16_t sum = (data[0] << 8 | data[1]);
     *temperature = sum / 340.0 + 36.53;
 }
