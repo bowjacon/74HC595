@@ -2,7 +2,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-21 20:22:48
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-24 20:05:45
+ * @LastEditTime: 2024-04-24 21:24:35
  * @FilePath: /74HC595/Core/I2C/i2c.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -40,8 +40,28 @@
 #define Write_Mode 0
 #define Read_Mode 1
 
-#define I2C_SCL(x) GPIO_WriteBit(I2C_PORT, I2C_SCL_Pin, x)
-#define I2C_SDA(x) GPIO_WriteBit(I2C_PORT, I2C_SDA_Pin, x)
+/**
+ * NOP个数根据实际情况调整
+ */
+#define I2C_SCL(x)                                                             \
+    do {                                                                       \
+        if (x) {                                                               \
+            I2C_PORT->BSRR = I2C_SCL_Pin;                                      \
+        } else {                                                               \
+            I2C_PORT->BRR = I2C_SCL_Pin;                                       \
+        }                                                                      \
+        __NOP(), __NOP(), __NOP(), __NOP();                                    \
+    } while (0)
+
+#define I2C_SDA(x)                                                             \
+    do {                                                                       \
+        if (x) {                                                               \
+            I2C_PORT->BSRR = I2C_SDA_Pin;                                      \
+        } else {                                                               \
+            I2C_PORT->BRR = I2C_SDA_Pin;                                       \
+        }                                                                      \
+        __NOP(), __NOP(), __NOP(), __NOP();                                    \
+    } while (0)
 
 void M_I2C_Init(void);
 void M_I2C_Transmit(const uint8_t *data, uint8_t n);
@@ -49,7 +69,7 @@ void M_I2C_Transmit(const uint8_t *data, uint8_t n);
 /*
  * 读取引脚
  */
-#define Read_SDA() GPIO_ReadInputDataBit(I2C_PORT, I2C_SDA_Pin)
+#define Read_SDA (I2C_PORT->IDR & I2C_SDA_Pin)
 
 /**
  * @brief
@@ -83,7 +103,11 @@ void M_I2C_Transmit(const uint8_t *data, uint8_t n);
         I2C_SCL(1);                                                            \
         I2C_SCL(0);                                                            \
     } while (0)
-
+#define M_I2C_NACK()                                                           \
+    do {                                                                       \
+        I2C_SDA(1);                                                            \
+        M_I2C_Clock();                                                         \
+    } while (0)
 void M_I2C_Transmit_Data(uint8_t reg_adress, const uint8_t *data, uint8_t n);
 void M_I2C_Reicive_Byte(uint8_t reg_adress, uint8_t *data);
 #endif

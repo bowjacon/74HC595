@@ -26,7 +26,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-13 15:09:00
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-23 22:38:51
+ * @LastEditTime: 2024-04-25 14:53:45
  * @FilePath: /74HC595/Core/Src/lcd1602.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -70,13 +70,8 @@
  */
 void LCD_WriteCommand(uint8_t command) {
     DataClear();
-    // SendByte(0);
-    // LCD_CheckBusy();
-    // Delay_ms(10);
     RS(Bit_RESET);
-    // RW(Bit_RESET);
     SendByte(command);
-    // GPIO_Write(LCD_DATA_PORT, command);
     EN(Bit_SET);
     Delay_ms(LCD_Delay);
     EN(Bit_RESET);
@@ -84,12 +79,7 @@ void LCD_WriteCommand(uint8_t command) {
 
 void LCD_WriteData(uint8_t data) {
     DataClear();
-    // SendByte(0);
-    // LCD_CheckBusy();
-    // Delay_ms(10);
     RS(Bit_SET);
-    // RW(Bit_RESET);
-    // GPIO_Write(LCD_DATA_PORT, data);
     SendByte(data);
     EN(Bit_SET);
     Delay_ms(LCD_Delay);
@@ -109,16 +99,6 @@ void LCD_Init(void) {
                             // LCD_WriteCommand(0x80);
 }
 
-// /**
-//  * @description:
-//  * @param {uint8_t} x
-//  * @param {uint8_t} y
-//  * @return {*}
-//  */
-// void LCD_SetCursor(uint8_t x, uint8_t y) {
-//     uint8_t address = (y == 1) ? (0xC0 + x) : (0x80 + x);
-//     LCD_WriteCommand(address);
-// }
 /**
  * @description:
  * @param {uint8_t} x
@@ -151,7 +131,7 @@ void LCD_ShowNum_16(uint8_t x, uint8_t y, int num) {
 /*
  * @description:显示10进制数
  */
-void LCD_ShowNum_10(uint8_t x, uint8_t y, int num) {
+void LCD_ShowNum_10(uint8_t x, uint8_t y, uint8_t num) {
     LCD_WriteCommand(0x40 + x + y * 64);
     if (num < 0) {
         LCD_WriteData('-');
@@ -173,6 +153,35 @@ void LCD_ShowNum_10(uint8_t x, uint8_t y, int num) {
         num /= 10;
     }
     for (int i = 0; i < count; i++) {
+        LCD_WriteData(str[i]);
+    }
+}
+// 显示浮点数，精度为四位小数
+void LCD_ShowNum_10_4(uint8_t x, uint8_t y, double num) {
+    LCD_WriteCommand(0x40 + x + y * 64);
+    if (num < 0) {
+        LCD_WriteData('-');
+        num = -num;
+    }
+    int temp = num;
+    LCD_ShowNum_10(x, y, temp);
+    LCD_WriteData('.');
+    temp = (num - temp) * 10000; // 修改这里，使得小数点后有四位
+    if (temp < 0) {
+        temp = -temp;
+    }
+    if (temp == 0) {
+        for (int i = 0; i < 4; i++) {
+            LCD_WriteData('0');
+        }
+        return;
+    }
+    char str[4];                   // 修改这里，使得数组长度为4
+    for (int i = 3; i >= 0; i--) { // 修改这里，使得循环从3开始
+        str[i] = temp % 10 + '0';
+        temp /= 10;
+    }
+    for (int i = 0; i < 4; i++) { // 修改这里，使得循环到4
         LCD_WriteData(str[i]);
     }
 }

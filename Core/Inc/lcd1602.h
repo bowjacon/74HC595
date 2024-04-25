@@ -26,7 +26,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-18 15:17:21
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-18 16:21:49
+ * @LastEditTime: 2024-04-24 20:43:35
  * @FilePath: /74HC595/Core/Inc/lcd1602.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -46,6 +46,7 @@
 #include "74HC595.h"
 #include "delay.h"
 #include "gpio.h"
+#include <stdint.h>
 
 #define LCD_Delay 1
 #define LCD_TIMEOUT 100
@@ -57,5 +58,6 @@ void LCD_DisplayString(uint8_t x, uint8_t y, char *str);
 void LCD_WriteData(uint8_t data);
 void LCD_WriteCommand(uint8_t command);
 void LCD_ShowNum_16(uint8_t x, uint8_t y, int num);
-void LCD_ShowNum_10(uint8_t x, uint8_t y, int num);
+void LCD_ShowNum_10(uint8_t x, uint8_t y,uint8_t num);
+void LCD_ShowNum_10_4(uint8_t x, uint8_t y, double  num);
 #endif

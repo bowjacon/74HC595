@@ -2,7 +2,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-21 20:22:42
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-24 20:05:36
+ * @LastEditTime: 2024-04-24 21:25:05
  * @FilePath: /74HC595/Core/I2C/i2c.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -22,11 +22,10 @@
  */
 #include "i2c.h"
 #include "delay.h"
+#include "gpio.h"
 #include "stm32f10x_gpio.h"
 #include <stdint.h>
 #include <string.h>
-
-
 
 /**
  * 发送数据
@@ -50,11 +49,11 @@ void M_I2C_Receive(uint8_t *data) {
     I2C_SDA(1);
     for (uint8_t j = 0; j < 8; j++) {
         I2C_SCL(1);
-        byte |= (Read_SDA() << (7 - j));
+        byte |= (Read_SDA << (7 - j));
         I2C_SCL(0);
     }
     *data = byte;
-    M_I2C_Clock();
+    M_I2C_NACK();
 }
 
 /**
