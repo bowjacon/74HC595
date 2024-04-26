@@ -26,7 +26,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-18 15:17:21
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-25 15:33:45
+ * @LastEditTime: 2024-04-26 12:28:32
  * @FilePath: /74HC595/Core/Src/main.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -46,17 +46,28 @@
 #include "delay.h"
 #include "gpio.h"
 #include "lcd1602.h"
+#include "mpu6050_reg.h"
 #include <stdint.h>
 
 int main(void) {
     My_GPIO_Init();
     LCD_Init();
-    MPU6050_Init();
     double temperture = 0;
+    MPU6050_DMP_Init();
+    // mpu_dmp_init();
+    double pitch, roll, yaw;
+    uint8_t id;
+    MPU6050_Init();
+    // M_I2C_Reicive_Byte(MPU6050_WHO_AM_I, &id);
+    // LCD_ShowNum_16(0, 1, id);
 
     while (1) {
-        MPU6050_Read_Temperature(&temperture);
-        LCD_ShowNum_10_4(0, 1, temperture);
-        Delay_ms(1000);
+        // MPU6050_Read_Temperature(&temperture);
+        // LCD_ShowNum_10_4(0, 1, temperture);
+        MPU6050_DMP_Get_Data(&pitch, &roll, &yaw);
+
+        LCD_ShowNum_10_n(5, 1, roll, 2);
+        // LCD_ShowNum_10_n(11, 1, yaw, 2);
+        Delay_ms(200);
     }
 }

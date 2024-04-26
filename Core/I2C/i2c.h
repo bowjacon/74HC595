@@ -2,7 +2,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-21 20:22:48
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-25 15:51:30
+ * @LastEditTime: 2024-04-26 12:27:33
  * @FilePath: /74HC595/Core/I2C/i2c.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -50,7 +50,7 @@
         } else {                                                               \
             I2C_PORT->BRR = I2C_SCL_Pin;                                       \
         }                                                                      \
-        __NOP(), __NOP(), __NOP(), __NOP();                                    \
+        Delay_us(4);                                                            \
     } while (0)
 
 #define I2C_SDA(x)                                                             \
@@ -60,7 +60,7 @@
         } else {                                                               \
             I2C_PORT->BRR = I2C_SDA_Pin;                                       \
         }                                                                      \
-        __NOP(), __NOP(), __NOP(), __NOP();                                    \
+        Delay_us(4);                                                            \
     } while (0)
 
 void M_I2C_Init(void);
@@ -120,4 +120,6 @@ void M_I2C_Receive(uint8_t *data, uint8_t ack_bit);
 #define M_I2C_Receive_ACK(data) M_I2C_Receive(data, 1)
 #define M_I2C_Receive_NACK(data) M_I2C_Receive(data, 0)
 void M_I2C_Read_Data(uint8_t reg_adress, uint8_t *data, uint8_t n);
+uint8_t i2c_write(uint8_t addr, uint8_t reg, uint8_t n, uint8_t *data);
+uint8_t i2c_read(uint8_t addr, uint8_t reg, uint8_t n, uint8_t *data);
 #endif

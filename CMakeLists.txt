@@ -44,9 +44,9 @@ add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-le
 
 # 设置优化的级别
 add_compile_options(-Ofast)
-
+# target_link_libraries(Example  m)
 # 设置头文件搜索路径
-include_directories(Core/Inc Core/I2C Drivers/Inc Core/MPU6050)
+include_directories(Core/Inc Core/I2C Drivers/Inc Core/Mpu6050 Core/eMPL Core/DSP/Include)
 
 # 预定义宏
 add_definitions(-DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER 
@@ -60,7 +60,7 @@ file(GLOB_RECURSE SOURCES "Core/*.*" "Drivers/*.*")
 # set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F103C8Tx_FLASH.ld)
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F103C6TX_FLASH.ld)
 
-# add_compile_definitions(ARM_MATH_CM4;ARM_MATH_MATRIX_CHECK;ARM_MATH_ROUNDING)
+add_compile_definitions(ARM_MATH_CM4;ARM_MATH_MATRIX_CHECK;ARM_MATH_ROUNDING)
 # add_compile_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
 # add_link_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
 add_compile_options(-mfloat-abi=soft)
@@ -69,25 +69,31 @@ add_compile_options(-mfloat-abi=soft)
 # --print-memory-usage 让链接器在链接完成后打印内存使用情况，这可以帮助我们了解程序使用了多少 RAM 和 Flash。
 # -Map=${PROJECT_BINARY_DIR}/${PROJECT_NAME}.map 让链接器生成一个 map 文件,包含了生成的二进制文件的详细信息
 add_link_options(-Wl,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR}/${PROJECT_NAME}.map)
-
+# add_compile_options(-lm)
 # 如上编译选项,为链接器设置目标处理器以及指令集
 add_link_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork) # NOLINT
-
+# add_link_options(-lc)
+# add_compile_options("-fno-math-errno")
 # 为链接器设置链接脚本
 add_link_options(-T ${LINKER_SCRIPT})
-
+# set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -specs=rdimon.specs -specs=nosys.specs")
+# target_link_libraries(Example m)
 # 构建可执行文件,分别为可执行文件名称、所需的源文件、链接脚本
+# add_compile_options(-mfloat-abi=softfp -mfpu=fpv4-sp-d16 -mthumb -mcpu=cortex-m4 -mlittle-endian -mthumb-interwork -specs=nano.specs -specs=nosys.specs )
+# add_link_options(-mfloat-abi=softfp -mfpu=fpv4-sp-d16 -mthumb -mcpu=cortex-m4 -mlittle-endian -mthumb-interwork -specs=nano.specs -specs=nosys.specs )
 add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
+# target_link_libraries(${PROJECT_NAME}.elf)
 
 # # 设置二进制文件的输出路径
 # set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
-# # set(BIN_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin)
-# if(GCC_VERSION VERSION_GREATER 12.2 OR GCC_VERSION VERSION_EQUAL 12.2)
-#     add_link_options(-Wl,--no-warn-rwx-segments)
-# endif()
+# set(BIN_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin)
+if(GCC_VERSION VERSION_GREATER 12.2 OR GCC_VERSION VERSION_EQUAL 12.2)
+    add_link_options(-Wl,--no-warn-rwx-segments)
+endif()
 # # 生成二进制文件
 # add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
 #         COMMAND ${CMAKE_OBJCOPY} -Oihex $<TARGET_FILE:${PROJECT_NAME}.elf> ${HEX_FILE}
-#         # COMMAND ${CMAKE_OBJCOPY} -Obinary $<TARGET_FILE:${PROJECT_NAME}.elf> ${BIN_FILE}
+#         COMMAND ${CMAKE_OBJCOPY} -Obinary $<TARGET_FILE:${PROJECT_NAME}.elf> ${BIN_FILE}
+#         COMMENT "Building ${HEX_FILE}"
 #         COMMENT "Building ${HEX_FILE}")
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fdiagnostics-color=always")

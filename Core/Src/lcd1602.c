@@ -185,3 +185,32 @@ void LCD_ShowNum_10_4(uint8_t x, uint8_t y, double num) {
         LCD_WriteData(str[i]);
     }
 }
+// 显示浮点数，精度为自定义位数
+void LCD_ShowNum_10_n(uint8_t x, uint8_t y, double num, uint8_t n) {
+    LCD_WriteCommand(0x40 + x + y * 64);
+    if (num < 0) {
+        LCD_WriteData('-');
+        num = -num;
+    }
+    int temp = num;
+    LCD_ShowNum_10(x, y, temp);
+    LCD_WriteData('.');
+    temp = (num - temp) * 10000; // 修改这里，使得小数点后有四位
+    if (temp < 0) {
+        temp = -temp;
+    }
+    if (temp == 0) {
+        for (int i = 0; i < n; i++) {
+            LCD_WriteData('0');
+        }
+        return;
+    }
+    char str[n];                   // 修改这里，使得数组长度为4
+    for (int i = n - 1; i >= 0; i--) { // 修改这里，使得循环从3开始
+        str[i] = temp % 10 + '0';
+        temp /= 10;
+    }
+    for (int i = 0; i < n; i++) { // 修改这里，使得循环到4
+        LCD_WriteData(str[i]);
+    }
+}

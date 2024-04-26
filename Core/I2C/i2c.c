@@ -2,7 +2,7 @@
  * @Author: bowjacon 2772408947@qq.com
  * @Date: 2024-04-21 20:22:42
  * @LastEditors: bowjacon 2772408947@qq.com
- * @LastEditTime: 2024-04-25 15:53:39
+ * @LastEditTime: 2024-04-25 17:18:48
  * @FilePath: /74HC595/Core/I2C/i2c.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -104,4 +104,18 @@ void M_I2C_Read_Data(uint8_t reg_adress, uint8_t *data, uint8_t n) {
         }
     }
     M_I2C_Stop();
+}
+/**
+ * @breif:适配dmp库
+ */
+uint8_t i2c_write(uint8_t addr, uint8_t reg, uint8_t n, uint8_t *data) {
+    M_I2C_Transmit_Data(reg, data, n);
+    return 0;
+}
+/**
+ * @breif:适配dmp库
+ */
+uint8_t i2c_read(uint8_t addr, uint8_t reg, uint8_t n, uint8_t *data) {
+    M_I2C_Read_Data(reg, data, n);
+    return 0;
 }

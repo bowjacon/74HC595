@@ -1,7 +1,7 @@
-set(CMAKE_C_COMPILER "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc")
+set(CMAKE_C_COMPILER "/home/miku/disk/arm-none-eabi/bin/arm-none-eabi-gcc")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "GNU")
-set(CMAKE_C_COMPILER_VERSION "10.3.1")
+set(CMAKE_C_COMPILER_VERSION "13.2.1")
 set(CMAKE_C_COMPILER_VERSION_INTERNAL "")
 set(CMAKE_C_COMPILER_WRAPPER "")
 set(CMAKE_C_STANDARD_COMPUTED_DEFAULT "17")
@@ -22,10 +22,10 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 
 set(CMAKE_AR "arm-none-eabi-ar")
-set(CMAKE_C_COMPILER_AR "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc-ar")
-set(CMAKE_RANLIB "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-ranlib")
-set(CMAKE_C_COMPILER_RANLIB "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc-ranlib")
-set(CMAKE_LINKER "/home/miku/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-ld")
+set(CMAKE_C_COMPILER_AR "/home/miku/disk/arm-none-eabi/bin/arm-none-eabi-gcc-ar")
+set(CMAKE_RANLIB "/home/miku/disk/arm-none-eabi/bin/arm-none-eabi-ranlib")
+set(CMAKE_C_COMPILER_RANLIB "/home/miku/disk/arm-none-eabi/bin/arm-none-eabi-gcc-ranlib")
+set(CMAKE_LINKER "/home/miku/disk/arm-none-eabi/bin/arm-none-eabi-ld")
 set(CMAKE_MT "")
 set(CMAKE_COMPILER_IS_GNUCC 1)
 set(CMAKE_C_COMPILER_LOADED 1)
@@ -66,7 +66,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/home/miku/toolchain/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include;/home/miku/toolchain/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include-fixed;/home/miku/toolchain/gcc-arm-none-eabi/arm-none-eabi/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/home/miku/disk/arm-none-eabi/lib/gcc/arm-none-eabi/13.2.1/include;/home/miku/disk/arm-none-eabi/lib/gcc/arm-none-eabi/13.2.1/include-fixed;/home/miku/disk/arm-none-eabi/arm-none-eabi/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
 set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")
