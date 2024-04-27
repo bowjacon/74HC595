@@ -43,24 +43,42 @@ add_compile_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork)  # NOLINT
 add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-length=0)
 
 # 设置优化的级别
-add_compile_options(-Ofast)
-# target_link_libraries(Example  m)
-# 设置头文件搜索路径
-include_directories(Core/Inc Core/I2C Drivers/Inc Core/Mpu6050 Core/eMPL Core/DSP/Include)
 
+if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
+    message(STATUS "Maximum optimization for speed")
+    add_compile_options(-Ofast)
+elseif ("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo")
+    message(STATUS "Maximum optimization for speed, debug info included")
+    add_compile_options(-Ofast -g)
+elseif ("${CMAKE_BUILD_TYPE}" STREQUAL "MinSizeRel")
+    message(STATUS "Maximum optimization for size")
+    add_compile_options(-Os)
+else ()
+    message(STATUS "Minimal optimization, debug info included")
+    add_compile_options(-Og -g)
+endif ()
+# target_link_libraries(Example  m)
+add_compile_definitions(ARM_MATH_CM3;ARM_MATH_MATRIX_CHECK;ARM_MATH_ROUNDING)
+# 设置头文件搜索路径
+include_directories(Core/Inc Core/I2C Drivers/Inc Core/Mpu6050 Core/eMPL Core/DSP/Inc Core/CMSIS/Include)
+# 先添加cortexm3的头文件路径
+# include_directories(${CMAKE_SOURCE_DIR}/path_to_cortexm3_include)
+#
+# 然后添加cmsis_gcc的头文件路径
+# include_directories(${CMAKE_SOURCE_DIR}/path_to_cmsis_gcc_include)
 # 预定义宏
-add_definitions(-DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER 
+add_definitions(-DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER  
 # -DVECT_TAB_SRAM
 )
-
+add_compile_options($<$<COMPILE_LANGUAGE:ASM>:-x$<SEMICOLON>assembler-with-cpp>)
 # 获取项目的所有源文件
-file(GLOB_RECURSE SOURCES "Core/*.*" "Drivers/*.*")
+file(GLOB_RECURSE SOURCES "Core/*.*" "Drivers/*.*" )
 
 # 设置变量值,即链接脚本路径
 # set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F103C8Tx_FLASH.ld)
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F103C6TX_FLASH.ld)
 
-add_compile_definitions(ARM_MATH_CM4;ARM_MATH_MATRIX_CHECK;ARM_MATH_ROUNDING)
+# add_compile_definitions(ARM_MATH_CM3;ARM_MATH_MATRIX_CHECK;ARM_MATH_ROUNDING;ARMCM3ARMCM3)
 # add_compile_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
 # add_link_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
 add_compile_options(-mfloat-abi=soft)
@@ -76,13 +94,17 @@ add_link_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork) # NOLINT
 # add_compile_options("-fno-math-errno")
 # 为链接器设置链接脚本
 add_link_options(-T ${LINKER_SCRIPT})
+link_directories(Core/DSP/Lib)
+link_libraries(libarm_cortexM3l_math.a)
+# #添加静态库目录
+# LINK_DIRECTORIES(Core/DSP/Lib/)
 # set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -specs=rdimon.specs -specs=nosys.specs")
 # target_link_libraries(Example m)
 # 构建可执行文件,分别为可执行文件名称、所需的源文件、链接脚本
 # add_compile_options(-mfloat-abi=softfp -mfpu=fpv4-sp-d16 -mthumb -mcpu=cortex-m4 -mlittle-endian -mthumb-interwork -specs=nano.specs -specs=nosys.specs )
 # add_link_options(-mfloat-abi=softfp -mfpu=fpv4-sp-d16 -mthumb -mcpu=cortex-m4 -mlittle-endian -mthumb-interwork -specs=nano.specs -specs=nosys.specs )
 add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
-# target_link_libraries(${PROJECT_NAME}.elf)
+# target_link_libraries(${PROJECT_NAME}.elf Core/DSP/Lib/arm_cortexM3l_math.lib) 
 
 # # 设置二进制文件的输出路径
 # set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)

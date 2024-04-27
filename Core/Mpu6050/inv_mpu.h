@@ -18,6 +18,7 @@
  *                  MPU9250 (or MPU6500 w/ AK8963 on the auxiliary bus)
  */
 #include "stm32f10x.h"                  // Device header
+#include "arm_math.h"
 #include "delay.h"
 #ifndef _INV_MPU_H_
 #define _INV_MPU_H_

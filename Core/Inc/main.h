@@ -39,8 +39,16 @@
 #include "delay.h"
 #include "gpio.h"
 #include "i2c.h"
-#include "lcd1602.h"
-#include "mpu6050.h"
 #include "inv_mpu.h"
+
+#include "lcd1602.h"
+
+#include "mpu6050.h"
+
+#include "arm_math.h"
+
+#include "mpu6050_reg.h"
+
+#include <stdint.h>
 // #include "inv_mpu.h"
 #endif
