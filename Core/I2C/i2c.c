@@ -28,9 +28,9 @@
 #include <string.h>
 
 /**
- * 发送一个字节
+ * 发送
  */
-void M_I2C_Transmit_Byte(uint8_t byte) {
+void M_I2C_Transmit(uint8_t byte) {
     I2C_SCL(0);
     for (uint8_t j = 0; j < 8; j++) {
         I2C_SDA((byte & (0x80 >> j)));
@@ -65,24 +65,32 @@ void M_I2C_Receive(uint8_t *data, uint8_t ack_bit) {
  */
 void M_I2C_Reicive_Byte(uint8_t reg_adress, uint8_t *data) {
     M_I2C_Start();
-    M_I2C_Transmit_Byte(MPU6050_ADDRESS);
-    M_I2C_Transmit_Byte(reg_adress);
+    M_I2C_Transmit(MPU6050_ADDRESS);
+    M_I2C_Transmit(reg_adress);
     M_I2C_Start();
-    M_I2C_Transmit_Byte(MPU6050_ADDRESS | Read_Mode);
+    M_I2C_Transmit(MPU6050_ADDRESS | Read_Mode);
     M_I2C_Receive_NACK(data);
     M_I2C_Stop();
 }
-
+/**
+ * 写入1个字节
+ */
+void M_I2C_Transmit_Byte(uint8_t reg_adress, uint8_t data) {
+    M_I2C_Start();
+    M_I2C_Transmit(MPU6050_ADDRESS);
+    M_I2C_Transmit(reg_adress);
+    M_I2C_Transmit(data);
+    M_I2C_Stop();
+}
 /**
  * 连续写入指定个数数据
  */
 void M_I2C_Transmit_Data(uint8_t reg_adress, const uint8_t *data, uint8_t n) {
-    uint8_t send_packet[2 + n];
     M_I2C_Start();
-    M_I2C_Transmit_Byte(MPU6050_ADDRESS);
-    M_I2C_Transmit_Byte(reg_adress);
+    M_I2C_Transmit(MPU6050_ADDRESS);
+    M_I2C_Transmit(reg_adress);
     for (uint8_t i = 0; i < n; i++) {
-        M_I2C_Transmit_Byte(data[i]);
+        M_I2C_Transmit(data[i]);
     }
     M_I2C_Stop();
 }
@@ -92,10 +100,10 @@ void M_I2C_Transmit_Data(uint8_t reg_adress, const uint8_t *data, uint8_t n) {
  */
 void M_I2C_Read_Data(uint8_t reg_adress, uint8_t *data, uint8_t n) {
     M_I2C_Start();
-    M_I2C_Transmit_Byte(MPU6050_ADDRESS);
-    M_I2C_Transmit_Byte(reg_adress);
+    M_I2C_Transmit(MPU6050_ADDRESS);
+    M_I2C_Transmit(reg_adress);
     M_I2C_Start();
-    M_I2C_Transmit_Byte(MPU6050_ADDRESS | Read_Mode);
+    M_I2C_Transmit(MPU6050_ADDRESS | Read_Mode);
     for (uint8_t i = 0; i < n; i++) {
         if (i != n - 1) {
             M_I2C_Receive_ACK(&data[i]);

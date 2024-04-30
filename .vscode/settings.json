@@ -17,7 +17,7 @@
       },
       // 普通函数
       "function": {
-        "foreground": "#b3860b"
+        "foreground": "#ca6b11"
       },
       // 临时变量
       "variable": "#92a71b",

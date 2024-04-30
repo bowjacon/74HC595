@@ -43,10 +43,12 @@ add_compile_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork)  # NOLINT
 add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-length=0)
 
 # 设置优化的级别
-
+set(CMAKE_BUILD_TYPE "Release")
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     message(STATUS "Maximum optimization for speed")
     add_compile_options(-Ofast)
+    # 设置 striped 可以去除符号表
+    # set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -s") 
 elseif ("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo")
     message(STATUS "Maximum optimization for speed, debug info included")
     add_compile_options(-Ofast -g)
@@ -60,16 +62,40 @@ endif ()
 # target_link_libraries(Example  m)
 add_compile_definitions(ARM_MATH_CM3;ARM_MATH_MATRIX_CHECK;ARM_MATH_ROUNDING)
 # 设置头文件搜索路径
-include_directories(Core/Inc Core/I2C Drivers/Inc Core/Mpu6050 Core/eMPL Core/DSP/Inc Core/CMSIS/Include)
+# include_directories(Core/Inc Core/I2C Drivers/Inc Core/Mpu6050 Core/eMPL Core/DSP/Inc Core/CMSIS/Include)
+macro(FIND_INCLUDE_DIR result curdir)									#定义函数,2个参数:存放结果result；指定路径curdir；
+	file(GLOB_RECURSE children "${curdir}/*.hpp" "${curdir}/*.h" )		#遍历获取{curdir}中*.hpp和*.h文件列表
+	set(dirlist "")														#定义dirlist中间变量，并初始化
+	foreach(child ${children})											#for循环
+		string(REGEX REPLACE "(.*)/.*" "\\1" LIB_NAME ${child})			#字符串替换,用/前的字符替换/*h
+		if(IS_DIRECTORY ${LIB_NAME})									#判断是否为路径
+			list (FIND dirlist ${LIB_NAME} list_index)					#去重，查找dirlist中是否有${LIB_NAME}指定的值，可以区分字符串相同数子后缀不同的路径：例如/app/test_1和/app/test_2
+			if(${list_index} LESS 0)									#若没找到则代表列表中没有该路径
+				LIST(APPEND dirlist ${LIB_NAME})						#将合法的路径加入dirlist变量中  
+			endif()														#结束判断
+		endif()															
+	endforeach()														#结束for循环
+	set(${result} ${dirlist})											#dirlist结果放入result变量中
+endmacro()
+FIND_INCLUDE_DIR(ALL_INCLUDE_DIRS ${CMAKE_SOURCE_DIR})					#调用函数，获取所有头文件路径
+include_directories(${ALL_INCLUDE_DIRS})								#添加所有头文件路径
 # 先添加cortexm3的头文件路径
 # include_directories(${CMAKE_SOURCE_DIR}/path_to_cortexm3_include)
 #
 # 然后添加cmsis_gcc的头文件路径
 # include_directories(${CMAKE_SOURCE_DIR}/path_to_cmsis_gcc_include)
 # 预定义宏
-add_definitions(-DDEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER  
+add_definitions(
+    -DDEBUG 
+    -DSTM32F10X_MD 
+    -DUSE_STDPERIPH_DRIVER  
 # -DVECT_TAB_SRAM
 )
+if(GCC_VERSION VERSION_GREATER 12.2 OR GCC_VERSION VERSION_EQUAL 12.2)
+    add_link_options(-Wl,--no-warn-rwx-segments)
+endif()
+# add_link_options(--no-warn-rwx-segments)
+
 add_compile_options($<$<COMPILE_LANGUAGE:ASM>:-x$<SEMICOLON>assembler-with-cpp>)
 # 获取项目的所有源文件
 file(GLOB_RECURSE SOURCES "Core/*.*" "Drivers/*.*" )
@@ -107,15 +133,13 @@ add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
 # target_link_libraries(${PROJECT_NAME}.elf Core/DSP/Lib/arm_cortexM3l_math.lib) 
 
 # # 设置二进制文件的输出路径
-# set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
-# set(BIN_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin)
-if(GCC_VERSION VERSION_GREATER 12.2 OR GCC_VERSION VERSION_EQUAL 12.2)
-    add_link_options(-Wl,--no-warn-rwx-segments)
-endif()
+set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
+set(BIN_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin)
+
 # # 生成二进制文件
-# add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
-#         COMMAND ${CMAKE_OBJCOPY} -Oihex $<TARGET_FILE:${PROJECT_NAME}.elf> ${HEX_FILE}
-#         COMMAND ${CMAKE_OBJCOPY} -Obinary $<TARGET_FILE:${PROJECT_NAME}.elf> ${BIN_FILE}
-#         COMMENT "Building ${HEX_FILE}"
-#         COMMENT "Building ${HEX_FILE}")
+add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
+        COMMAND ${CMAKE_OBJCOPY} -Oihex $<TARGET_FILE:${PROJECT_NAME}.elf> ${HEX_FILE}
+        COMMAND ${CMAKE_OBJCOPY} -Obinary $<TARGET_FILE:${PROJECT_NAME}.elf> ${BIN_FILE}
+        COMMENT "Building ${HEX_FILE}"
+        COMMENT "Building ${HEX_FILE}")
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fdiagnostics-color=always")

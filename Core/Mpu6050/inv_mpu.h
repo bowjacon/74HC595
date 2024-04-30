@@ -132,5 +132,6 @@ u8  MPU6050_DMP_Init(void);
 u8 MPU6050_DMP_Get_Data(double *pitch,double  *roll,double *yaw);//10MS  100HZ����һ�£��� DEFAULT_MPU_HZ Ƶ�ʱ���һ��
 /*********************/
 /********************/
+
 #endif  /* #ifndef _INV_MPU_H_ */
 

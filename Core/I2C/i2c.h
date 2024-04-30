@@ -64,7 +64,7 @@
     } while (0)
 
 void M_I2C_Init(void);
-void M_I2C_Transmit(const uint8_t *data, uint8_t n);
+void M_I2C_Transmit(uint8_t byte);
 
 /*
  * 读取引脚
@@ -122,4 +122,5 @@ void M_I2C_Receive(uint8_t *data, uint8_t ack_bit);
 void M_I2C_Read_Data(uint8_t reg_adress, uint8_t *data, uint8_t n);
 uint8_t i2c_write(uint8_t addr, uint8_t reg, uint8_t n, uint8_t *data);
 uint8_t i2c_read(uint8_t addr, uint8_t reg, uint8_t n, uint8_t *data);
+void M_I2C_Transmit_Byte(uint8_t reg_adress, uint8_t data);
 #endif

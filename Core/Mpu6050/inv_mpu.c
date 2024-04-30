@@ -2934,9 +2934,9 @@ u8 MPU6050_DMP_Get_Data(double *pitch,double  *roll,double *yaw)//（5MS  200HZ�
 		q2 = quat[2] / q30;
 		q3 = quat[3] / q30; 
 		//计算得到俯仰角/横滚角/航向角
-		// *pitch = asinf(-2 * q1 * q3 + 2 * q0* q2)* 57.3;	// pitch
-		// *roll  = atan2f(2 * q2 * q3 + 2 * q0 * q1, -2 * q1 * q1 - 2 * q2* q2 + 1)* 57.3;	// roll
-		// *yaw   = atan2f(2*(q1*q2 + q0*q3),q0*q0+q1*q1-q2*q2-q3*q3) * 57.3;	//yaw
+		*pitch = asinf(-2 * q1 * q3 + 2 * q0* q2)* 57.3;	// pitch
+		*roll  = atan2f(2 * q2 * q3 + 2 * q0 * q1, -2 * q1 * q1 - 2 * q2* q2 + 1)* 57.3;	// roll
+		*yaw   = atan2f(2*(q1*q2 + q0*q3),q0*q0+q1*q1-q2*q2-q3*q3) * 57.3;	//yaw
 	}else return 2;
 	return 0;
 }

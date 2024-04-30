@@ -34,8 +34,8 @@
 
 #include "lcd1602.h"
 #include "delay.h"
+#include <math.h>
 #include <stdint.h>
-
 /**
  * @description:
  * @return {*}
@@ -131,7 +131,7 @@ void LCD_ShowNum_16(uint8_t x, uint8_t y, int num) {
 /*
  * @description:显示10进制数
  */
-void LCD_ShowNum_10(uint8_t x, uint8_t y, uint8_t num) {
+void LCD_ShowNum_10(uint8_t x, uint8_t y, uint32_t num) {
     LCD_WriteCommand(0x40 + x + y * 64);
     if (num < 0) {
         LCD_WriteData('-');
@@ -185,6 +185,20 @@ void LCD_ShowNum_10_4(uint8_t x, uint8_t y, double num) {
         LCD_WriteData(str[i]);
     }
 }
+
+/**
+ * @breif:快速幂，返回a的b次方
+ */
+uint32_t quickPow(uint32_t a, uint8_t b) {
+    uint32_t res = 1;
+    while (b > 0) {
+        if (b & 1)
+            res = res * a;
+        b >>= 1;
+        a = a * a;
+    }
+    return res;
+}
 // 显示浮点数，精度为自定义位数
 void LCD_ShowNum_10_n(uint8_t x, uint8_t y, double num, uint8_t n) {
     LCD_WriteCommand(0x40 + x + y * 64);
@@ -195,7 +209,7 @@ void LCD_ShowNum_10_n(uint8_t x, uint8_t y, double num, uint8_t n) {
     int temp = num;
     LCD_ShowNum_10(x, y, temp);
     LCD_WriteData('.');
-    temp = (num - temp) * 10000; // 修改这里，使得小数点后有四位
+    temp = (num - temp) * quickPow(10, n); // 修改这里，使得小数点后有四位
     if (temp < 0) {
         temp = -temp;
     }
@@ -205,7 +219,7 @@ void LCD_ShowNum_10_n(uint8_t x, uint8_t y, double num, uint8_t n) {
         }
         return;
     }
-    char str[n];                   // 修改这里，使得数组长度为4
+    char str[n];                       // 修改这里，使得数组长度为4
     for (int i = n - 1; i >= 0; i--) { // 修改这里，使得循环从3开始
         str[i] = temp % 10 + '0';
         temp /= 10;

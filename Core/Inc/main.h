@@ -50,5 +50,8 @@
 #include "mpu6050_reg.h"
 
 #include <stdint.h>
+
+#include "inv_mpu_dmp_motion_driver.h"
+
 // #include "inv_mpu.h"
 #endif

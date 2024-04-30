@@ -58,7 +58,7 @@ void LCD_DisplayString(uint8_t x, uint8_t y, char *str);
 void LCD_WriteData(uint8_t data);
 void LCD_WriteCommand(uint8_t command);
 void LCD_ShowNum_16(uint8_t x, uint8_t y, int num);
-void LCD_ShowNum_10(uint8_t x, uint8_t y,uint8_t num);
+void LCD_ShowNum_10(uint8_t x, uint8_t y,uint32_t num);
 void LCD_ShowNum_10_4(uint8_t x, uint8_t y, double  num);
 void LCD_ShowNum_10_n(uint8_t x, uint8_t y, double num, uint8_t n);
 #endif
