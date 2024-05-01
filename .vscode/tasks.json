@@ -48,7 +48,7 @@
         // "-c",
         // "program ./build/Example.elf verify ",......
         "-c",
-        "program ./build/Example.elf",
+        "program ./build/${workspaceRootFolderName}.elf",
         // "load_image ./build/Example.elf",
         // "flash write_image ./build/Example.elf ",
         // "load_image ./build/Example.elf ",

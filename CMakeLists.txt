@@ -25,9 +25,11 @@ set(SIZE arm-none-eabi-size)
 
 # 设置编译的目标类型为静态库
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+get_filename_component(TOP_LEVEL_DIR ${CMAKE_SOURCE_DIR} NAME)
+set(CURRENT_TOP_LEVEL_DIR ${TOP_LEVEL_DIR} CACHE INTERNAL "")
 
 # 设置项目名称和支持的语言
-project(Example C CXX ASM)
+project(${CURRENT_TOP_LEVEL_DIR} C CXX ASM)
 
 # 设置CMake使用的C++语言标准和C语言标准
 set(CMAKE_CXX_STANDARD 17)
@@ -89,6 +91,7 @@ add_definitions(
     -DDEBUG 
     -DSTM32F10X_MD 
     -DUSE_STDPERIPH_DRIVER  
+    # -DARM_MATH_CM3
 # -DVECT_TAB_SRAM
 )
 if(GCC_VERSION VERSION_GREATER 12.2 OR GCC_VERSION VERSION_EQUAL 12.2)
@@ -113,6 +116,15 @@ add_compile_options(-mfloat-abi=soft)
 # --print-memory-usage 让链接器在链接完成后打印内存使用情况，这可以帮助我们了解程序使用了多少 RAM 和 Flash。
 # -Map=${PROJECT_BINARY_DIR}/${PROJECT_NAME}.map 让链接器生成一个 map 文件,包含了生成的二进制文件的详细信息
 add_link_options(-Wl,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR}/${PROJECT_NAME}.map)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fdata-sections -ffunction-sections")
+set(CMAKE_ASM_FLAGS "${CMAKE_C_FLAGS} -x assembler-with-cpp -MMD -MP")
+set(CMAKE_C_LINK_FLAGS "${CMAKE_C_LINK_FLAGS} -Wl,--start-group -lc -lm -Wl,--end-group")
+# set(CMAKE_C_LINK_FLAGS "${TARGET_FLAGS}")
+# set(CMAKE_C_LINK_FLAGS "${CMAKE_C_LINK_FLAGS} -T \"${CMAKE_SOURCE_DIR}/STM32F103RCTx_FLASH.ld\"")
+# set(CMAKE_C_LINK_FLAGS "${CMAKE_C_LINK_FLAGS} --specs=nano.specs")
+# set(CMAKE_C_LINK_FLAGS "${CMAKE_C_LINK_FLAGS} -Wl,-Map=${CMAKE_PROJECT_NAME}.map -Wl,--gc-sections")
+# set(CMAKE_C_LINK_FLAGS "${CMAKE_C_LINK_FLAGS} -Wl,--start-group -lc -lm -Wl,--end-group")
+# set(CMAKE_C_LINK_FLAGS "${CMAKE_C_LINK_FLAGS} -Wl,--print-memory-usage")
 # add_compile_options(-lm)
 # 如上编译选项,为链接器设置目标处理器以及指令集
 add_link_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork) # NOLINT
@@ -120,8 +132,8 @@ add_link_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork) # NOLINT
 # add_compile_options("-fno-math-errno")
 # 为链接器设置链接脚本
 add_link_options(-T ${LINKER_SCRIPT})
-link_directories(Core/DSP/Lib)
-link_libraries(libarm_cortexM3l_math.a)
+# link_directories(Core/DSP/Lib)
+# link_libraries(libarm_cortexM3l_math.a)
 # #添加静态库目录
 # LINK_DIRECTORIES(Core/DSP/Lib/)
 # set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -specs=rdimon.specs -specs=nosys.specs")

@@ -35,6 +35,7 @@
 #define __TIMER_H
 
 // #include "my_config.h"
+#include "step.h"
 #include "stm32f10x.h"
 #include "stm32f10x_conf.h"
 
@@ -49,5 +50,5 @@ void TIM2_Init(uint16_t period, uint16_t prescaler, uint8_t preemptionPriority,
 
 void TIM3_Init(uint16_t period, uint16_t prescaler, uint8_t preemptionPriority,
                uint8_t subPriority, FunctionalState NewState);
-
+extern node step_queue[STEP_SIZE + 2 * STEP_CHECK_SIZE];
 #endif
