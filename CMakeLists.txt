@@ -45,7 +45,7 @@ add_compile_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork)  # NOLINT
 add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-length=0)
 
 # 设置优化的级别
-set(CMAKE_BUILD_TYPE "Release")
+set(CMAKE_BUILD_TYPE "RelWithDebInfo")
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     message(STATUS "Maximum optimization for speed")
     add_compile_options(-Ofast)
