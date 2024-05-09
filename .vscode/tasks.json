@@ -37,7 +37,7 @@
       "command": "openocd",
       "args": [
         "-f",
-        "./project.cfg",
+        "project.cfg",
         // "interface/cmsis-dap.cfg",
         // "-f",
         // "target/stm32f1x.cfg",

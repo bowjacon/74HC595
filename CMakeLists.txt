@@ -81,6 +81,7 @@ macro(FIND_INCLUDE_DIR result curdir)									#定义函数,2个参数:存放结
 endmacro()
 FIND_INCLUDE_DIR(ALL_INCLUDE_DIRS ${CMAKE_SOURCE_DIR})					#调用函数，获取所有头文件路径
 include_directories(${ALL_INCLUDE_DIRS})								#添加所有头文件路径
+include_directories("Core/Source/Include Core/Source/Include/dsp")
 # 先添加cortexm3的头文件路径
 # include_directories(${CMAKE_SOURCE_DIR}/path_to_cortexm3_include)
 #
@@ -99,9 +100,18 @@ if(GCC_VERSION VERSION_GREATER 12.2 OR GCC_VERSION VERSION_EQUAL 12.2)
 endif()
 # add_link_options(--no-warn-rwx-segments)
 
-add_compile_options($<$<COMPILE_LANGUAGE:ASM>:-x$<SEMICOLON>assembler-with-cpp>)
+# add_compile_options($<$<COMPILE_LANGUAGE:ASM>:-x$<SEMICOLON>assembler-with-cpp>)
 # 获取项目的所有源文件
 file(GLOB_RECURSE SOURCES "Core/*.*" "Drivers/*.*" )
+# 获取Core/Source目录下的所有源文件
+# file(GLOB_RECURSE  SRC_LIST "Drivers/Src/*.c")
+# include_directories(${PROJECT_SOURCE_DIR}/include)
+# file(GLOB SRC_LIST "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
+# 设置动态库生成路径
+# set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+# add_library(stm32f10x  SHARED ${SRC_LIST})
+# 设置动态库/静态库生成路径
+# 生成静态库
 
 # 设置变量值,即链接脚本路径
 # set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F103C8Tx_FLASH.ld)
@@ -134,6 +144,11 @@ add_link_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork) # NOLINT
 add_link_options(-T ${LINKER_SCRIPT})
 # link_directories(Core/DSP/Lib)
 # link_libraries(libarm_cortexM3l_math.a)
+# set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
+
+# link_libraries("${CMAKE_CURRENT_SOURCE_DIR}/Core/DSP/Lib/libarm_math.a")
+# link_libraries("${CMAKE_CURRENT_SOURCE_DIR}/Lib/libstm32f10x.a")
+# link_directories("Lib")
 # #添加静态库目录
 # LINK_DIRECTORIES(Core/DSP/Lib/)
 # set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -specs=rdimon.specs -specs=nosys.specs")
@@ -141,9 +156,17 @@ add_link_options(-T ${LINKER_SCRIPT})
 # 构建可执行文件,分别为可执行文件名称、所需的源文件、链接脚本
 # add_compile_options(-mfloat-abi=softfp -mfpu=fpv4-sp-d16 -mthumb -mcpu=cortex-m4 -mlittle-endian -mthumb-interwork -specs=nano.specs -specs=nosys.specs )
 # add_link_options(-mfloat-abi=softfp -mfpu=fpv4-sp-d16 -mthumb -mcpu=cortex-m4 -mlittle-endian -mthumb-interwork -specs=nano.specs -specs=nosys.specs )
-add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
-# target_link_libraries(${PROJECT_NAME}.elf Core/DSP/Lib/arm_cortexM3l_math.lib) 
+file(GLOB LIBRARIES "Lib/*.a")
 
+add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
+
+foreach(LIBRARY ${LIBRARIES})
+    target_link_libraries(${PROJECT_NAME}.elf ${LIBRARY})
+endforeach()
+# target_link_libraries(${PROJECT_NAME}.elf libstm32f10x) 
+# set(TARGET "algorithm_shared_dll")
+# add_library(${TARGET} SHARED ${SRC_LIST})
+# add_library(mpu6050 STATIC ${SRC_LIST})
 # # 设置二进制文件的输出路径
 set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
 set(BIN_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin)

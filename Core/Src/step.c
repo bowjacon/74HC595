@@ -1,23 +1,13 @@
 #include "step.h"
-node step_queue[STEP_SIZE + 2 * STEP_CHECK_SIZE];
-max_info maxvalue
-    [2]; // 0代表上一次的最大值，1代表这一次的最大值，2代表下一次的最大值
-void Step_Init() {
-    for (int i = 0; i < STEP_SIZE + 2 * STEP_CHECK_SIZE; i++) {
-        step_queue[i].current = &step_queue[i];
-        step_queue[i].position = 0;
-    }
+#include "node.h"
+node step_node[Node_N];
+void Step_Value_Update() {
+    double ax, ay, az, value;
+    MPU6050_Get_Accelerometer(&ax, &ay, &az);
+    insert_end(sqrt(ax * ax + ay * ay + az * az), step_node);
+    //  value==sqrt(ax*ax+ay*ay+az*az);
+    // MPU6050_Get_Accelerometer(&ax, &ay, &az);
 }
-void Step_Find_Max() {
-    //遍历step_queue数组，找到最大值
-    for (int i = 0; i < STEP_SIZE; i++) {
-        if (step_queue[i].value > maxvalue[1].value) {
-            maxvalue[1].value = step_queue[i].value;
-            maxvalue[1].position = step_queue[i].position;
-        }
-    }
-}
-void Step_Value_Update() {}
 // void walk_step(void)
 // {
 // 	data_get_once();

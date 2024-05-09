@@ -43,6 +43,9 @@
  */
 // #include "stm32c8t6.h"
 #include "main.h"
+#include "delay.h"
+#include <stdint.h>
+#include <stdio.h>
 
 // #define PI 3.1415926
 int main(void) {
@@ -65,16 +68,25 @@ int main(void) {
     // dmp_set_pedometer_step_count(1);
     // LCD_ShowNum_10(0, 1, Mpu6050_Handle.accel.div);
     double ax, ay, az;
+    uint8_t buffer[1024]="ni hao";
+    int *nums;
+    Serial_Init();
+    // RetargetInit(USART1);
+
     // short ax_s, ay_s, az_s;
     while (1) {
-        MPU6050_Get_Accelerometer(&ax, &ay, &az);
+        // MPU6050_Get_Accelerometer(&ax, &ay, &az);
         // ax = ax_s >> (ACCEL_REG_0 - Mpu6050_Handle.accel_value);
         // ay = ay_s >> (ACCEL_REG_0 - Mpu6050_Handle.accel_value);
         // az = az_s >> (ACCEL_REG_0 - Mpu6050_Handle.accel_value);
         // MPU6050_Read_Temperature(&temperture);
         // LCD_ShowNum_10_n(0, 2, temperture, 2);
         // LCD_ShowNum_10_4(0, 1, sin_a);
-        LCD_ShowNum_10_n(0, 1, ax, 4);
+        // arm_rms_f32(&num, 3, nums);
+        // scanf("%s", buffer);
+        printf("%s\n", buffer);
+        Delay_ms(500);
+        // LCD_ShowNum_10(0, 1, ax);
         // LCD_ShowNum_10(0, 1, Mpu6050_Handle.accel.div);
         // MPU6050_DMP_Get_Data(&pitch, &roll, &yaw);
         // LCD_ShowNum_10_n(0, 1, pitch, 2);
