@@ -137,7 +137,9 @@ set(CMAKE_C_LINK_FLAGS "${CMAKE_C_LINK_FLAGS} -Wl,--start-group -lc -lm -Wl,--en
 # set(CMAKE_C_LINK_FLAGS "${CMAKE_C_LINK_FLAGS} -Wl,--print-memory-usage")
 # add_compile_options(-lm)
 # 如上编译选项,为链接器设置目标处理器以及指令集
-add_link_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork) # NOLINT
+# add_link_options(-specs=nano.specs)使用精简库
+add_link_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork -specs=nosys.specs -specs=nano.specs) # NOLINT
+# set(COMMON_FLAGS "")
 # add_link_options(-lc)
 # add_compile_options("-fno-math-errno")
 # 为链接器设置链接脚本

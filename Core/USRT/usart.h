@@ -42,4 +42,8 @@ p_str *p_str_end();
 void USART_SendString(char *str);
 void u_printf(const char *fmt, ...);
 int str_to_int(char *str);
+// char *convertBase(uint8_t in, uint8_t out, int num);
+void *convertBase(uint8_t in, uint8_t out, int num, char *outputNum);
+#define TO_HEX(num, str) convertBase(10, 16, num, str)
+void u_scanf(const char *fmt, ...) ;
 #endif

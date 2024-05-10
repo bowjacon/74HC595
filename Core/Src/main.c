@@ -68,25 +68,21 @@ int main(void) {
     // dmp_set_pedometer_step_count(1);
     // LCD_ShowNum_10(0, 1, Mpu6050_Handle.accel.div);
     double ax, ay, az;
-    uint8_t buffer[1024] = "hello";
-    uint8_t buffer1[1024] = "world";
+    // uint8_t buffer[1024] = "hello";
+    // uint8_t buffer1[1024] = "world";
     Serial_Init();
     // RetargetInit(USART1);
     float32_t num[3] = {1, 2, 3};
     float32_t *p = num;
-    float nums[3];
-    // arm_rms_f32(p, 3, nums);
-    // USART_SendString(USART1, "Hello World\n");
-    // Get_Double(12.3555, buffer);
-    u_printf("%.4f\n", 12.3555);
-    // printf("%d\n",a);
-    // printf("%s\n", buffer);
-    //将nums转换为字符串
-    // for(int i = 0; i < 3; i++) {
-    //     printf("%d\n", nums[i]);
-    // }
-    // short ax_s, ay_s, az_s;
+    double  nums[3] = {5234, 2, 3};
+
     while (1) {
+        u_scanf("%lf", &nums[0]);
+        u_printf("num:%lf\n", nums[0]);
+        // u_printf("numi: %d\n", nums[0]);
+        // u_printf("%d\n", nums[0]);
+        // scanf("%d", &nums[0]);
+        // printf("%d\n", nums[0]);
         // MPU6050_Get_Accelerometer(&ax, &ay, &az);
         // ax = ax_s >> (ACCEL_REG_0 - Mpu6050_Handle.accel_value);
         // ay = ay_s >> (ACCEL_REG_0 - Mpu6050_Handle.accel_value);
